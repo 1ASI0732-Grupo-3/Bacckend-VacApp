@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VacApp-Bovinova-Platform.props" />
+</Project>
