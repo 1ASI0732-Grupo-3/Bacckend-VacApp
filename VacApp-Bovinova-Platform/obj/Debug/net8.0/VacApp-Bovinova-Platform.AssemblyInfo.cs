@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VacApp-Bovinova-Platform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+667c3e5d8cda676eda2489816187c8e80c3cbd09")]
 [assembly: System.Reflection.AssemblyProductAttribute("VacApp-Bovinova-Platform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VacApp-Bovinova-Platform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

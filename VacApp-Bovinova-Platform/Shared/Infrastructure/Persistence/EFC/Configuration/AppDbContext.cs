@@ -15,6 +15,9 @@ namespace VacApp_Bovinova_Platform.Shared.Infrastructure.Persistence.EFC.Configu
 public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Campaign> Campaigns { get; set; }
+    public DbSet<Bovine> Bovines { get; set; }
+    public DbSet<Stable> Stables { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
