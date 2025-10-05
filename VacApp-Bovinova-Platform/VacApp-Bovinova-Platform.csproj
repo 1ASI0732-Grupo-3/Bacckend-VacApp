@@ -7,36 +7,34 @@
     </PropertyGroup>
     <ItemGroup>
         <!-- Updated packages -->
-        <PackageReference Include="Google.Apis.Auth" Version="1.69.0" /> <!-- Latest: 1.70.0 -->
-        <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.68.0.1869" /> <!-- Latest: 1.70.0.3646 -->
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.11" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" /> <!-- CRITICAL: Was 7.0.0 -->
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11"> <!-- Updated -->
+        <PackageReference Include="Google.Apis.Auth" Version="1.69.0" />
+        <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.68.0.1869" /> 
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.11" /> 
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" /> 
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" /> 
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Moq" Version="4.20.72" /> <!-- Updated -->
+        <PackageReference Include="Moq" Version="4.20.72" /> 
 <PackageReference Include="NUnit" Version="3.14.0" />
-<PackageReference Include="NUnit3TestAdapter" Version="4.6.0" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" /> <!-- Updated -->
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" /> <!-- Updated -->
-        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.9.0" /> <!-- Already latest -->
-        <PackageReference Include="EntityFrameworkCore.CreatedUpdatedDate" Version="8.0.0" /> <!-- Already latest -->
-        <PackageReference Include="Humanizer.Core" Version="2.14.1" /> <!-- Use stable instead of beta -->
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.11" /> <!-- Updated -->
-        <!-- Remove this obsolete package -->
-        <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="2.0.0-preview1-final" /> -->
-        <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.11" /> <!-- Updated -->
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" /> <!-- Already latest -->
-        <PackageReference Include="dotenv.net" Version="3.2.1" /> <!-- Already latest -->
-        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" /> <!-- Already latest -->
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" /> <!-- Updated -->
-        <PackageReference Include="CloudinaryDotNet" Version="1.27.8" /> <!-- Updated -->
-        <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.41.1" /> <!-- Updated -->
-        <PackageReference Include="System.Text.Json" Version="9.0.0" /> <!-- Already latest for .NET 8 -->
+<PackageReference Include="NUnit3TestAdapter" Version="4.6.0" /> 
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" /> 
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.9.0" /> 
+        <PackageReference Include="EntityFrameworkCore.CreatedUpdatedDate" Version="8.0.0" /> 
+        <PackageReference Include="Humanizer.Core" Version="2.14.1" /> 
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" /> 
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.11" /> 
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.11" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="dotenv.net" Version="3.2.1" /> 
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" /> 
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" /> 
+        <PackageReference Include="CloudinaryDotNet" Version="1.27.8" /> 
+        <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.41.1" /> 
+        <PackageReference Include="System.Text.Json" Version="9.0.0" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="RanchManagement\Domain\Model\ValueObjects\" />
