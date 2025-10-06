@@ -8695,19 +8695,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\51924\\.nuget\\packages\\": {}
+    "/Users/maycolrojas/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Cursos7moCiclo\\Diseno\\Bacckend-VacApp\\VacApp-Bovinova-Platform\\VacApp-Bovinova-Platform.csproj",
+      "projectUniqueName": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp-Bovinova-Platform/VacApp-Bovinova-Platform.csproj",
       "projectName": "VacApp-Bovinova-Platform",
-      "projectPath": "H:\\Cursos7moCiclo\\Diseno\\Bacckend-VacApp\\VacApp-Bovinova-Platform\\VacApp-Bovinova-Platform.csproj",
-      "packagesPath": "C:\\Users\\51924\\.nuget\\packages\\",
-      "outputPath": "H:\\Cursos7moCiclo\\Diseno\\Bacckend-VacApp\\VacApp-Bovinova-Platform\\obj\\",
+      "projectPath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp-Bovinova-Platform/VacApp-Bovinova-Platform.csproj",
+      "packagesPath": "/Users/maycolrojas/.nuget/packages/",
+      "outputPath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp-Bovinova-Platform/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\51924\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/maycolrojas/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -8854,19 +8854,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
+            "version": "[8.0.16, 8.0.16]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.20, 8.0.20]"
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "version": "[8.0.16, 8.0.16]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
+            "version": "[8.0.16, 8.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -8877,7 +8873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
