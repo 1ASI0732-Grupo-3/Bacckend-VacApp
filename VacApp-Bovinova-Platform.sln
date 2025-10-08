@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacApp-Bovinova-Platform", "VacApp-Bovinova-Platform\VacApp-Bovinova-Platform.csproj", "{6F42E189-DC10-4EFC-B8DF-9AC7F3832BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacApp.Tests", "VacApp.Tests \VacApp.Tests.csproj", "{8A61CE83-A125-4EAD-8C46-0C69B1900BF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacAppTests", "VacApp.Tests \VacAppTests.csproj", "{8A61CE83-A125-4EAD-8C46-0C69B1900BF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

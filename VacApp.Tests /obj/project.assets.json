@@ -7789,9 +7789,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacApp.Tests.csproj",
-      "projectName": "VacApp.Tests",
-      "projectPath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacApp.Tests.csproj",
+      "projectUniqueName": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacAppTests.csproj",
+      "projectName": "VacAppTests",
+      "projectPath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacAppTests.csproj",
       "packagesPath": "/Users/maycolrojas/.nuget/packages/",
       "outputPath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /obj/",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B6t82YoDduI=",
+  "dgSpecHash": "6ZzdupD93Vw=",
   "success": true,
-  "projectFilePath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacApp.Tests.csproj",
+  "projectFilePath": "/Users/maycolrojas/Documents/GitHub/Bacckend-VacApp/VacApp.Tests /VacAppTests.csproj",
   "expectedPackageFiles": [
     "/Users/maycolrojas/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/maycolrojas/.nuget/packages/bouncycastle.cryptography/2.3.1/bouncycastle.cryptography.2.3.1.nupkg.sha512",

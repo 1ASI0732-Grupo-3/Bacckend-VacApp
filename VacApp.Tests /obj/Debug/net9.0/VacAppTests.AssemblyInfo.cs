@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("VacApp.Tests")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("VacAppTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d25434def9382f22497add8b028c741d8c9d9204")]
-[assembly: System.Reflection.AssemblyProductAttribute("VacApp.Tests")]
-[assembly: System.Reflection.AssemblyTitleAttribute("VacApp.Tests")]
+[assembly: System.Reflection.AssemblyProductAttribute("VacAppTests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("VacAppTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
