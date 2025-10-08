@@ -40,6 +40,7 @@ using VacApp_Bovinova_Platform.VoiceCommand.Domain.Services;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Parser;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Persistence.EFC.Repositories;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Speech;
+using MySql.Data.MySqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -118,6 +119,17 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Verify Database Connection string
 if (connectionString is null)
     throw new Exception("Database connection string is not set");
+
+// Log seguro de cadena de conexión activa (sin password)
+try
+{
+    var csb = new MySqlConnectionStringBuilder(connectionString);
+    Console.WriteLine($"DB -> Env={builder.Environment.EnvironmentName}, Host={csb.Server}, Port={csb.Port}, Database={csb.Database}, User={csb.UserID}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"DB -> No se pudo parsear la cadena de conexión: {ex.Message}");
+}
 
 // Configure Database Context and Logging Levels
 if (builder.Environment.IsDevelopment())
