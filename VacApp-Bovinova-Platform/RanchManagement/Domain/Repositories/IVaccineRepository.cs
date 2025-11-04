@@ -6,11 +6,11 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Repositories;
 
 public interface IVaccineRepository : IBaseRepository<Vaccine>
 {
-    Task<Vaccine?> FindByNameAsync(string name);
-    
-    Task<IEnumerable<Vaccine>> FindByBovineIdAsync(int? bovineId);
-    
-    Task<IEnumerable<Vaccine>> FindByUserIdAsync(RanchUserId userId);
-    
-    Task<IEnumerable<Vaccine>> FindAllAsync();
+    public Task<Vaccine?> FindByNameAsync(string name);
+
+    public Task<IEnumerable<Vaccine>> FindByBovineIdAsync(int? bovineId);
+
+    public Task<IEnumerable<Vaccine>> FindByUserIdAsync(RanchUserId userId);
+
+    public Task<IEnumerable<Vaccine>> FindAllAsync();
 }

@@ -13,22 +13,22 @@ public class CampaignRepository(AppDbContext context) : BaseRepository<Campaign>
     {
         return await Context.Set<Campaign>().FirstOrDefaultAsync(c => c.Name == name);
     }
-    
+
     public async Task<IEnumerable<Goal>> FindByCampaignId(int campaignId)
     {
-        return await Context.Set<Goal>().Where(g=>g.CampaignId == campaignId).ToListAsync();
+        return await Context.Set<Goal>().Where(g => g.CampaignId == campaignId).ToListAsync();
     }
 
     public async Task<IEnumerable<Channel>> FindChannelsByCampaignId(int campaignId)
     {
-        return await Context.Set<Channel>().Where(c=>c.CampaignId == campaignId).ToListAsync();
+        return await Context.Set<Channel>().Where(c => c.CampaignId == campaignId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Campaign>> FindByUserIdAsync(CampaignUserId userId)
     {
         return await Context.Set<Campaign>().Where(f => f.CampaignUserId == userId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Campaign>> FindAllAsync()
     {
         return await Context.Set<Campaign>().ToListAsync();

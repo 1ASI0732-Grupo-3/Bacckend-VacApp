@@ -1,7 +1,6 @@
-namespace VacApp_Bovinova_Platform.IAM.Infrastructure.Tokens.JWT.Configuration
+namespace VacApp_Bovinova_Platform.IAM.Infrastructure.Tokens.JWT.Configuration;
+
+public class TokenSettings
 {
-    public class TokenSettings
-    {
-        public string? Secret { get; set; }
-    }
+    public string? Secret { get; set; }
 }

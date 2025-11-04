@@ -1,8 +1,9 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MySql.Data.MySqlClient;
 using VacApp_Bovinova_Platform.CampaignManagement.Application.Internal.CommandServices;
 using VacApp_Bovinova_Platform.CampaignManagement.Application.Internal.QueryServices;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Repositories;
@@ -40,7 +41,6 @@ using VacApp_Bovinova_Platform.VoiceCommand.Domain.Services;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Parser;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Persistence.EFC.Repositories;
 using VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Speech;
-using MySql.Data.MySqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -62,7 +62,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen(options =>
 {
     options.EnableAnnotations();
-    
+
     // API Information
     options.SwaggerDoc("v1", new OpenApiInfo
     {
@@ -118,7 +118,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 // Verify Database Connection string
 if (connectionString is null)
+{
     throw new Exception("Database connection string is not set");
+}
 
 // Log seguro de cadena de conexión activa (sin password)
 try
@@ -133,6 +135,7 @@ catch (Exception ex)
 
 // Configure Database Context and Logging Levels
 if (builder.Environment.IsDevelopment())
+{
     builder.Services.AddDbContext<AppDbContext>(
         options =>
         {
@@ -140,7 +143,9 @@ if (builder.Environment.IsDevelopment())
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors();
         });
+}
 else if (builder.Environment.IsProduction())
+{
     builder.Services.AddDbContext<AppDbContext>(
         options =>
         {
@@ -148,6 +153,7 @@ else if (builder.Environment.IsProduction())
                 .LogTo(Console.WriteLine, LogLevel.Error)
                 .EnableDetailedErrors();
         });
+}
 
 // Configure Swagger to show SQL queries in Development
 builder.Services.AddLogging(config =>

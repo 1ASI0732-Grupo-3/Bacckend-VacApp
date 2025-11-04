@@ -1,6 +1,7 @@
 using System.Net.Mime;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Commands;
@@ -8,7 +9,6 @@ using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Queries;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Resources;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
-using Microsoft.AspNetCore.Authorization;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
@@ -39,11 +39,16 @@ public class StableController(
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
-        
+        }
+
         var command = CreateStableCommandFromResourceAssembler.ToCommandFromResource(resource, userId);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return CreatedAtAction(nameof(GetStableById), new { id = result.Id },
             StableResourceFromEntityAssembler.ToResourceFromEntity(result));
@@ -61,8 +66,10 @@ public class StableController(
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
-        
+        }
+
         var stables = await queryService.Handle(new GetAllStablesQuery(userId));
         var stableResources = stables.Select(StableResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(stableResources);
@@ -73,7 +80,11 @@ public class StableController(
     {
         var getStableById = new GetStablesByIdQuery(id);
         var result = await queryService.Handle(getStableById);
-        if (result is null) return NotFound();
+        if (result is null)
+        {
+            return NotFound();
+        }
+
         var resources = StableResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resources);
     }
@@ -89,7 +100,10 @@ public class StableController(
     {
         var command = UpdateStableCommandFromResourceAssembler.ToCommandFromResource(id, resource);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return Ok(StableResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
@@ -108,11 +122,13 @@ public class StableController(
         var result = await commandService.Handle(command);
 
         if (result is null)
+        {
             return NotFound(new { message = "Stable not found" });
+        }
 
         return Ok(new { message = "Deleted successfully" });
     }
-    
+
     /// <summary>
     /// Get stable by name
     /// </summary>
@@ -128,7 +144,11 @@ public class StableController(
     {
         var getStableByNameQuery = new GetStableByNameQuery(name);
         var result = await queryService.Handle(getStableByNameQuery);
-        if (result is null) return NotFound();
+        if (result is null)
+        {
+            return NotFound();
+        }
+
         var resources = StableResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resources);
     }

@@ -12,24 +12,24 @@ public class StaffRepository(AppDbContext ctx)
 {
     public async Task<Staff?> FindByNameAsync(string name)
     {
-        return await Context.Set<Staff>().FirstOrDefaultAsync(f=>f.Name == name);
+        return await Context.Set<Staff>().FirstOrDefaultAsync(f => f.Name == name);
     }
-    
+
     public async Task<IEnumerable<Staff>> FindByCampaignIdAsync(int? campaignId)
     {
         return await Context.Set<Staff>().Where(f => f.CampaignId == campaignId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Staff>> FindByEmployeeStatusAsync(int employeeStatus)
     {
         return await Context.Set<Staff>().Where(f => f.EmployeeStatus.Value == employeeStatus).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Staff>> FindByUserIdAsync(StaffUserId userId)
     {
         return await Context.Set<Staff>().Where(f => f.StaffUserId == userId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Staff>> FindAllAsync()
     {
         return await Context.Set<Staff>().ToListAsync();

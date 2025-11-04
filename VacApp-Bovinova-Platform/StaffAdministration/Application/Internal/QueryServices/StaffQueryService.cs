@@ -18,17 +18,17 @@ public class StaffQueryService(IStaffRepository staffRepository,
     {
         // Extract user type from JWT token
         var userTypeClaim = httpContextAccessor.HttpContext?.User.FindFirst("user_type")?.Value;
-        
+
         // If user_type is Admin, return all staffs
         if (string.Equals(userTypeClaim, "Admin", StringComparison.OrdinalIgnoreCase))
         {
             return await staffRepository.FindAllAsync();
         }
-        
+
         // If user is not Admin, filter by userId
         return await staffRepository.FindByUserIdAsync(new StaffUserId(query.UserId));
     }
-    
+
     /// <summary>
     /// Retrieves a Staff entity by its unique identifier.
     /// </summary>
@@ -38,7 +38,7 @@ public class StaffQueryService(IStaffRepository staffRepository,
     {
         return await staffRepository.FindByIdAsync(query.Id);
     }
-    
+
     /// <summary>
     /// Retrieves all staffs by campaign ID.
     /// </summary>
@@ -48,7 +48,7 @@ public class StaffQueryService(IStaffRepository staffRepository,
     {
         return await staffRepository.FindByCampaignIdAsync(query.CampaignId);
     }
-    
+
     /// <summary>
     /// Retrieves all staffs by status.
     /// </summary>
@@ -58,7 +58,7 @@ public class StaffQueryService(IStaffRepository staffRepository,
     {
         return await staffRepository.FindByEmployeeStatusAsync(query.EmployeeStatus);
     }
-    
+
     /// <summary>
     /// Retrieves a Staff entity by its name.
     /// </summary>

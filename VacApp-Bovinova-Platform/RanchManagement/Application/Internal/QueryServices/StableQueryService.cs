@@ -18,17 +18,17 @@ public class StableQueryService(IStableRepository stableRepository,
     {
         // Extract user type from JWT token
         var userTypeClaim = httpContextAccessor.HttpContext?.User.FindFirst("user_type")?.Value;
-        
+
         // If user_type is Admin, return all vaccines
         if (string.Equals(userTypeClaim, "Admin", StringComparison.OrdinalIgnoreCase))
         {
             return await stableRepository.FindAllAsync();
         }
-        
+
         // If user is not Admin, filter by userId
         return await stableRepository.FindByUserIdAsync(new RanchUserId(query.UserId));
     }
-    
+
     /// <summary>
     /// Retrieves a Stable entity by its unique identifier.
     /// </summary>

@@ -7,13 +7,13 @@ public static class CampaignResourceFromEntityAssembler
 {
     public static CampaignResource ToResourceFromEntity(Campaign campaign) =>
     new CampaignResource(
-        campaign.Id, 
-        campaign.Name, 
-        campaign.Description, 
-        campaign.StartDate, 
-        campaign.EndDate, 
-        campaign.Status, 
-        campaign.Goals, 
+        campaign.Id,
+        campaign.Name,
+        campaign.Description,
+        campaign.StartDate,
+        campaign.EndDate,
+        campaign.Status,
+        campaign.Goals,
         campaign.Channels,
         campaign.StableId);
 }

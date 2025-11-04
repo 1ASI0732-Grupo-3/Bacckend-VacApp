@@ -12,7 +12,7 @@ public class KebabCaseRouteNamingConvention : IControllerModelConvention
             Template = selector.AttributeRouteModel.Template?.Replace("[controller]", name.ToKebabCase())
         } : null;
     }
-    
+
     public void Apply(ControllerModel controller)
     {
         foreach (var selector in controller.Selectors)
@@ -20,7 +20,7 @@ public class KebabCaseRouteNamingConvention : IControllerModelConvention
             selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
         }
 
-        foreach (var selector in controller.Actions.SelectMany(a=> a.Selectors))
+        foreach (var selector in controller.Actions.SelectMany(a => a.Selectors))
         {
             selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
         }

@@ -9,8 +9,8 @@ public record EmployeeStatus
         if (value < 1 || value > 5)
         {
             throw new ArgumentOutOfRangeException(
-                nameof(value), 
-                "EmployeeStatus must be:\n" + 
+                nameof(value),
+                "EmployeeStatus must be:\n" +
                 " 1 : Active,\n " +
                 "2 : Inactive,\n " +
                 "3 : OnLeave,\n " +

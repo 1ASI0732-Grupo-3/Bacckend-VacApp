@@ -14,34 +14,34 @@ public interface IBaseRepository<TEntity>
     /// </summary>
     /// <param name="entity">Entity object to add</param>
     /// <returns></returns>
-    Task AddAsync(TEntity entity);
-    
+    public Task AddAsync(TEntity entity);
+
     /// <summary>
     ///  Update entity
     /// </summary>
     /// <param name="entity">The entity object to update</param>
-    void Update(TEntity entity);
-    
+    public void Update(TEntity entity);
+
     /// <summary>
     /// Remove entity
     /// </summary>
     /// <param name="entity">The entity to remove</param>
-    void Remove(TEntity entity);
-    
+    public void Remove(TEntity entity);
+
     /// <summary>
     /// Find entity by id
     /// </summary>
     /// <param name="id">The entity ID to find</param>
     /// <returns>Entity object if found</returns>
-    Task<TEntity?> FindByIdAsync(int id);
-    
+    public Task<TEntity?> FindByIdAsync(int id);
+
     /// <summary>
     /// Get All entities
     /// </summary>
     /// <returns>An Enumerable containing all entity objects</returns>
-    Task<IEnumerable<TEntity>> ListAsync();
-    
-    
-    Task SaveChangesAsync();
+    public Task<IEnumerable<TEntity>> ListAsync();
+
+
+    public Task SaveChangesAsync();
 
 }

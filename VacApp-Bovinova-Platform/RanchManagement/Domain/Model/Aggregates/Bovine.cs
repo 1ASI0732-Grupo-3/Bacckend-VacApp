@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.RegularExpressions;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Commands;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.ValueObjects;
 
@@ -62,28 +61,28 @@ public class Bovine
     [Required]
     [StringLength(300)]
     public string? BovineImg { get; private set; }
-    
-    
+
+
     /// <summary>
     /// User Identifier As Foreign Key
     /// </summary>
     public RanchUserId? RanchUserId { get; set; }
-    
-    
+
+
     // Default constructor for EF Core
     private Bovine()
     {
         Name = "";
         Gender = "Male";
     }
-    
+
     public Bovine(
-        string name, 
-        string gender, 
+        string name,
+        string gender,
         DateTime? birthDate,
-        string? breed, 
-        string? location, 
-        string? bovineImg, 
+        string? breed,
+        string? location,
+        string? bovineImg,
         int? stableId,
         RanchUserId? ranchUserId
         )
@@ -102,8 +101,10 @@ public class Bovine
     public Bovine(CreateBovineCommand command)
     {
         if (!command.Gender.ToLower().Equals("male") && !command.Gender.ToLower().Equals("female"))
+        {
             throw new ArgumentException("Gender must be either 'male' or 'female'");
-        
+        }
+
         Name = command.Name;
         Gender = command.Gender;
         BirthDate = command.BirthDate;
@@ -118,7 +119,9 @@ public class Bovine
     public void Update(UpdateBovineCommand command)
     {
         if (!command.Gender.ToLower().Equals("male") && !command.Gender.ToLower().Equals("female"))
+        {
             throw new ArgumentException("Gender must be either 'male' or 'female'");
+        }
 
         Name = command.Name;
         Gender = command.Gender;

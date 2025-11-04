@@ -3,10 +3,10 @@ using VacApp_Bovinova_Platform.Shared.Domain.Repositories;
 
 namespace VacApp_Bovinova_Platform.IAM.Domain.Repositories;
 
-public interface IAdminRepository: IBaseRepository<Admin>
+public interface IAdminRepository : IBaseRepository<Admin>
 {
-    Task<Admin?> FindByEmailAsync(string email);
-    Task<IEnumerable<Admin>> FindAllAsync();
-    Task UpdateAsync(Admin admin);
-    Task DeleteAsync(Admin admin);
+    public Task<Admin?> FindByEmailAsync(string email);
+    public Task<IEnumerable<Admin>> FindAllAsync();
+    public Task UpdateAsync(Admin admin);
+    public Task DeleteAsync(Admin admin);
 }

@@ -4,5 +4,5 @@ namespace VacApp_Bovinova_Platform.VoiceCommand.Domain.Services;
 
 public interface IVoiceParserService
 {
-    VoiceCommandResult ParseCommand(string text);
+    public VoiceCommandResult ParseCommand(string text);
 }

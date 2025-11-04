@@ -15,7 +15,9 @@ public class StableCommandService(IStableRepository stableRepository,
         var stable =
             await stableRepository.FindByNameAsync(command.Name);
         if (stable != null)
+        {
             throw new Exception($"Stable entity with name '{command.Name}' already exists.");
+        }
         // Create a new Stable entity from the command data
 
         try

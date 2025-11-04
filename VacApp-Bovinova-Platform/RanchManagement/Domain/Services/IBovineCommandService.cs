@@ -5,9 +5,9 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 
 public interface IBovineCommandService
 {
-    Task<Bovine?> Handle(CreateBovineCommand command);
-    
-    Task<Bovine?> Handle(UpdateBovineCommand command);
-    
-    Task<Bovine?> Handle(DeleteBovineCommand command);
+    public Task<Bovine?> Handle(CreateBovineCommand command);
+
+    public Task<Bovine?> Handle(UpdateBovineCommand command);
+
+    public Task<Bovine?> Handle(DeleteBovineCommand command);
 }

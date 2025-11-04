@@ -1,40 +1,38 @@
-using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Commands;
-
 namespace VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Aggregates;
 
 public class Goal
 {
-    public int Id { get; private set;}
-    public string Description {get; private set;}
-    public string Metric {get; private set;}
-    public int TargetValue {get; private set;}
+    public int Id { get; private set; }
+    public string Description { get; private set; }
+    public string Metric { get; private set; }
+    public int TargetValue { get; private set; }
     public int CurrentValue { get; private set; }
-    
+
     public int CampaignId { get; private set; }
-    
+
     public Goal()
     {
-        this.Description = string.Empty;
-        this.Metric = string.Empty;
-        this.TargetValue = 0;
-        this.CurrentValue = 0;
+        Description = string.Empty;
+        Metric = string.Empty;
+        TargetValue = 0;
+        CurrentValue = 0;
     }
 
     public Goal(string description, string metric, int targetValue, int currentValue, int campaignId)
     {
-        this.Description = description;
-        this.Metric = metric;
-        this.TargetValue = targetValue;
-        this.CurrentValue = currentValue;   
-        this.CampaignId = campaignId;
+        Description = description;
+        Metric = metric;
+        TargetValue = targetValue;
+        CurrentValue = currentValue;
+        CampaignId = campaignId;
     }
 
     public void UpdateValues(string description, string metric, int targetValue, int currentValue)
     {
-        this.Description = description;
-        this.Metric = metric;
-        this.TargetValue = targetValue;
-        this.CurrentValue = currentValue;   
+        Description = description;
+        Metric = metric;
+        TargetValue = targetValue;
+        CurrentValue = currentValue;
     }
 
     /*

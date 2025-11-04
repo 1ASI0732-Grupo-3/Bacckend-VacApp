@@ -82,7 +82,7 @@ public class Voice
     /// <summary>
     /// Constructor for creating a new voice command
     /// </summary>
-    public Voice(string originalText, VoiceCommandType commandType, string? parameters, 
+    public Voice(string originalText, VoiceCommandType commandType, string? parameters,
         bool isValid, int userId)
     {
         OriginalText = originalText;

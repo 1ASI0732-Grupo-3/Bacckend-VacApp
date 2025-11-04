@@ -6,7 +6,7 @@ using VacApp_Bovinova_Platform.StaffAdministration.Domain.Services;
 
 namespace VacApp_Bovinova_Platform.StaffAdministration.Application.Internal.CommandServices;
 
-public class StaffCommandService(IStaffRepository staffRepository, 
+public class StaffCommandService(IStaffRepository staffRepository,
     IUnitOfWork unitOfWork) : IStaffCommandService
 {
     /// <summary>
@@ -18,10 +18,12 @@ public class StaffCommandService(IStaffRepository staffRepository,
     public async Task<Staff?> Handle(CreateStaffCommand command)
     {
         // Check if a Staff entity with the given Name already exists
-        var staff = 
+        var staff =
             await staffRepository.FindByNameAsync(command.Name);
-        if (staff != null) 
+        if (staff != null)
+        {
             throw new Exception($"Staff entity with name '{command.Name}' already exists.");
+        }
         // Create a new Staff entity from the command data
         staff = new Staff(command);
 
@@ -39,7 +41,7 @@ public class StaffCommandService(IStaffRepository staffRepository,
 
         return staff;
     }
-    
+
     /// <summary>
     /// Handles the update of an existing staff entity.
     /// </summary>
@@ -72,8 +74,8 @@ public class StaffCommandService(IStaffRepository staffRepository,
 
         return staff;
     }
-    
-    
+
+
     /// <summary>
     /// Handles the deletion of an existing staff entity.
     /// </summary>

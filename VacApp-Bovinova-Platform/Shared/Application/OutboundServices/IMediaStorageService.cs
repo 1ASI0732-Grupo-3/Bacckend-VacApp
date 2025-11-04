@@ -2,6 +2,6 @@ namespace VacApp_Bovinova_Platform.Shared.Application.OutboundServices;
 
 public interface IMediaStorageService
 {
-    string UploadFileAsync(string fileName, Stream fileData);
-    void UpdateFileAsync(string url, Stream fileData);
+    public string UploadFileAsync(string fileName, Stream fileData);
+    public void UpdateFileAsync(string url, Stream fileData);
 }

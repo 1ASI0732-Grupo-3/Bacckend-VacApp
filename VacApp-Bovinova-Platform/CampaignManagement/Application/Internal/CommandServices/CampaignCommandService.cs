@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Aggregates;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Commands;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Repositories;
@@ -8,22 +7,26 @@ using VacApp_Bovinova_Platform.Shared.Domain.Repositories;
 namespace VacApp_Bovinova_Platform.CampaignManagement.Application.Internal.CommandServices;
 
 public class CampaignCommandService(ICampaignRepository campaignRepository, IUnitOfWork unitOfWork)
-:ICampaignCommandService
+: ICampaignCommandService
 {
     public async Task<Campaign?> Handle(CreateCampaignCommand command)
     {
         var campaign = await campaignRepository.FindByNameAsync(command.Name);
-        if(campaign!=null) throw new Exception("Campaign already exists");
+        if (campaign != null)
+        {
+            throw new Exception("Campaign already exists");
+        }
+
         campaign = new Campaign(command);
         try
         {
             await campaignRepository.AddAsync(campaign);
             await unitOfWork.CompleteAsync();
-       
+
         }
         catch (Exception e)
         {
-           return null;
+            return null;
         }
         return campaign;
     }
@@ -43,7 +46,6 @@ public class CampaignCommandService(ICampaignRepository campaignRepository, IUni
             Console.WriteLine(e);
             throw;
         }
-        
     }
 
     public async Task<Campaign?> Handle(UpdateCampaignStatusCommand command)
@@ -73,7 +75,7 @@ public class CampaignCommandService(ICampaignRepository campaignRepository, IUni
             campaign.AddGoal(command.Goal);
             await campaignRepository.SaveChangesAsync();
         }
-       
+
         try
         {
             await unitOfWork.CompleteAsync();

@@ -1,6 +1,7 @@
 using System.Net.Mime;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Commands;
@@ -8,7 +9,6 @@ using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Queries;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Resources;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
-using Microsoft.AspNetCore.Authorization;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
@@ -45,11 +45,16 @@ public class VaccineController(
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
-        
+        }
+
         var command = CreateVaccineCommandFromResourceAssembler.ToCommandFromResource(resource, userId);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return CreatedAtAction(nameof(GetVaccineById), new { id = result.Id },
             VaccineResourceFromEntityAssembler.ToResourceFromEntity(result));
@@ -71,8 +76,10 @@ public class VaccineController(
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
-        
+        }
+
         var vaccines = await queryService.Handle(new GetAllVaccinesQuery(userId));
         var vaccineResources = vaccines.Select(VaccineResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(vaccineResources);
@@ -122,7 +129,10 @@ public class VaccineController(
     {
         var command = UpdateVaccineCommandFromResourceAssembler.ToCommandFromResource(id, resource);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return Ok(VaccineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
@@ -140,7 +150,9 @@ public class VaccineController(
         var command = new DeleteVaccineCommand(id);
         var result = await commandService.Handle(command);
         if (result is null)
+        {
             return NotFound(new { message = "Vaccine not found" });
+        }
 
         return Ok(new { message = "Deleted successfully" });
     }

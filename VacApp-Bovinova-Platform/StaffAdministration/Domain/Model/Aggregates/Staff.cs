@@ -14,15 +14,15 @@ public class Staff
     [Required]
     [StringLength(100)]
     public string Name { get; private set; }
-    
+
     [Required]
     public EmployeeStatus EmployeeStatus { get; private set; }
-    
+
     public int? CampaignId { get; private set; }
     [ForeignKey(nameof(CampaignId))]
     public Campaign? Campaign { get; private set; }
-    
-    
+
+
     /// <summary>
     /// User Identifier As Foreign Key
     /// </summary>
@@ -33,7 +33,7 @@ public class Staff
         Name = "";
         EmployeeStatus = new EmployeeStatus();
     }
-    
+
     public Staff(string name, int employeeStatus, int? campaignId, StaffUserId? staffUserId)
     {
         Name = name;

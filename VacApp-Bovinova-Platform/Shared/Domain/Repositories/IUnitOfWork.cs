@@ -12,5 +12,5 @@ public interface IUnitOfWork
     ///  Commit changes to the database
     /// </summary>
     /// <returns></returns>
-    Task CompleteAsync();
+    public Task CompleteAsync();
 }

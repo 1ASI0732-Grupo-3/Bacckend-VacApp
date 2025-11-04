@@ -1,12 +1,12 @@
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
-using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Aggregates;
-using VacApp_Bovinova_Platform.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
-using VacApp_Bovinova_Platform.StaffAdministration.Domain.Model.Aggregates;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Aggregates;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.ValueObjects;
 using VacApp_Bovinova_Platform.IAM.Domain.Model.Aggregates;
+using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Aggregates;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.ValueObjects;
+using VacApp_Bovinova_Platform.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
+using VacApp_Bovinova_Platform.StaffAdministration.Domain.Model.Aggregates;
 using VacApp_Bovinova_Platform.StaffAdministration.Domain.Model.ValueObjects;
 using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Aggregates;
 
@@ -18,7 +18,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     public DbSet<Campaign> Campaigns { get; set; }
     public DbSet<Bovine> Bovines { get; set; }
     public DbSet<Stable> Stables { get; set; }
-    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.AddCreatedUpdatedInterceptor();
@@ -28,7 +28,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        
+
         /* IAM BC  */
         //User
         builder.Entity<User>().HasKey(f => f.Id);
@@ -42,7 +42,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Admin>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Admin>().Property(f => f.Email).IsRequired();
         builder.Entity<Admin>().Property(f => f.EmailConfirmed).IsRequired();
-        
+
         /* ---------------------------------------------------------------------------------------------------------- * /
 
         /* Ranch BC -------------------------------------------------------------------------------------- */
@@ -59,11 +59,11 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Bovine>()
             .Property(f => f.RanchUserId)
             .HasConversion(
-                v => v.UserIdentifier,    
-                v => new RanchUserId(v))      
+                v => v.UserIdentifier,
+                v => new RanchUserId(v))
             .HasColumnName("user_id")
             .IsRequired();
-        
+
         //Vaccine
         builder.Entity<Vaccine>().HasKey(f => f.Id);
         builder.Entity<Vaccine>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();
@@ -75,11 +75,11 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Vaccine>()
             .Property(f => f.RanchUserId)
             .HasConversion(
-                v => v.UserIdentifier,   
-                v => new RanchUserId(v))    
+                v => v.UserIdentifier,
+                v => new RanchUserId(v))
             .HasColumnName("user_id")
             .IsRequired();
-        
+
         //Stable
         builder.Entity<Stable>().HasKey(f => f.Id);
         builder.Entity<Stable>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();
@@ -87,14 +87,14 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Stable>()
             .Property(f => f.RanchUserId)
             .HasConversion(
-                v => v.UserIdentifier,    
-                v => new RanchUserId(v))        
+                v => v.UserIdentifier,
+                v => new RanchUserId(v))
             .HasColumnName("user_id")
             .IsRequired();
-        
+
 
         /* ---------------------------------------------------------------------------------------------------------- */
-        
+
         /* Staff Administration BC -------------------------------------------------------------------------------------- */
         //Staff
         builder.Entity<Staff>().HasKey(f => f.Id);
@@ -112,13 +112,13 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Staff>()
             .Property(f => f.StaffUserId)
             .HasConversion(
-                v => v.UserIdentifier,     
-                v => new StaffUserId(v))        
+                v => v.UserIdentifier,
+                v => new StaffUserId(v))
             .HasColumnName("user_id")
             .IsRequired();
 
         /* ---------------------------------------------------------------------------------------------------------- */
-        
+
         /* Campaign Management BC -------------------------------------------------------------------------------------- */
         //Campaign
         builder.Entity<Campaign>().HasKey(c => c.Id);
@@ -132,11 +132,11 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Campaign>()
             .Property(f => f.CampaignUserId)
             .HasConversion(
-                v => v.UserIdentifier,     
-                v => new CampaignUserId(v))        
+                v => v.UserIdentifier,
+                v => new CampaignUserId(v))
             .HasColumnName("user_id")
             .IsRequired();
-        
+
         /* ---------------------------------------------------------------------------------------------------------- * /
 
         /*Voice Command BC -------------------------------------------------------------------------------------- */
@@ -179,7 +179,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasIndex(vc => new { vc.UserId, vc.WasExecuted }).HasDatabaseName("ix_voice_commands_user_id_was_executed");
 
         /* ---------------------------------------------------------------------------------------------------------- */
-        
+
         builder.UseSnakeCaseNamingConvention();
     }
 }

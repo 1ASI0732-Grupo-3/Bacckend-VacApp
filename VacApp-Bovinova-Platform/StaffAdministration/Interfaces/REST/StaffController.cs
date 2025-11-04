@@ -8,7 +8,6 @@ using VacApp_Bovinova_Platform.StaffAdministration.Domain.Model.Queries;
 using VacApp_Bovinova_Platform.StaffAdministration.Domain.Services;
 using VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST.Resources;
 using VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST.Transform;
-using VacApp_Bovinova_Platform.IAM.Infrastructure.Pipeline.Middleware.Attributes;
 
 namespace VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST;
 
@@ -35,11 +34,16 @@ public class StaffController(IStaffCommandService commandService,
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("Usuario no autenticado.");
-        
+        }
+
         var command = CreateStaffCommandFromResourceAssembler.ToCommandFromResource(resource, userId);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return CreatedAtAction(nameof(GetStaffById), new { id = result.Id },
             StaffResourceFromEntityAssembler.ToResourceFromEntity(result));
@@ -61,8 +65,10 @@ public class StaffController(IStaffCommandService commandService,
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("Usuario no autenticado.");
-        
+        }
+
         var staffs = await queryService.Handle(new GetAllStaffQuery(userId));
         var staffResources = staffs.Select(StaffResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(staffResources);
@@ -78,7 +84,11 @@ public class StaffController(IStaffCommandService commandService,
     {
         var getStaffById = new GetStaffByIdQuery(id);
         var result = await queryService.Handle(getStaffById);
-        if (result is null) return NotFound();
+        if (result is null)
+        {
+            return NotFound();
+        }
+
         var resources = StaffResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resources);
     }
@@ -99,7 +109,9 @@ public class StaffController(IStaffCommandService commandService,
         var staffs = await queryService.Handle(getStaffByCampaignIdQuery);
 
         if (staffs == null || !staffs.Any())
+        {
             return NotFound();
+        }
 
         var staffResources = staffs.Select(StaffResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(staffResources);
@@ -121,7 +133,9 @@ public class StaffController(IStaffCommandService commandService,
         var staffs = await queryService.Handle(getStaffByEmployeeStatusQuery);
 
         if (staffs == null || !staffs.Any())
+        {
             return NotFound();
+        }
 
         var staffResources = staffs.Select(StaffResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(staffResources);
@@ -142,7 +156,11 @@ public class StaffController(IStaffCommandService commandService,
     {
         var getStaffByNameQuery = new GetStaffByNameQuery(name);
         var result = await queryService.Handle(getStaffByNameQuery);
-        if (result is null) return NotFound();
+        if (result is null)
+        {
+            return NotFound();
+        }
+
         var resources = StaffResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resources);
     }
@@ -158,7 +176,10 @@ public class StaffController(IStaffCommandService commandService,
     {
         var command = UpdateStaffCommandFromResourceAssembler.ToCommandFromResource(id, resource);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return Ok(StaffResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
@@ -175,9 +196,11 @@ public class StaffController(IStaffCommandService commandService,
     {
         var command = new DeleteStaffCommand(id);
         var result = await commandService.Handle(command);
-        
+
         if (result is null)
+        {
             return NotFound(new { message = "Staff not found" });
+        }
 
         return Ok(new { message = "Deleted successfully" });
     }

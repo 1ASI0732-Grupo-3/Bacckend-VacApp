@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Commands;
 using VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.ValueObjects;
@@ -24,65 +23,65 @@ public class Campaign
     public int? StableId { get; private set; }
     [ForeignKey(nameof(StableId))]
     public Stable? Stable { get; private set; }
-    
+
     /// <summary>
     /// User Identifier As Foreign Key
     /// </summary>
     public CampaignUserId? CampaignUserId { get; set; }
-    
-    
-    
+
+
+
 
     protected Campaign()
     {
-        this.Name = string.Empty;
-        this.Description = string.Empty;
-        this.StartDate = DateTime.Now;
-        this.EndDate = DateTime.Now;
-        this.Status = string.Empty;
-        this.Goals = new List<Goal>();
-        this.Channels = new List<Channel>();
-        
+        Name = string.Empty;
+        Description = string.Empty;
+        StartDate = DateTime.Now;
+        EndDate = DateTime.Now;
+        Status = string.Empty;
+        Goals = new List<Goal>();
+        Channels = new List<Channel>();
+
     }
-    
+
     public Campaign(
-        string name, 
-        string description, 
-        DateTime startDate, 
-        DateTime endDate, 
-        string status, 
-        ICollection<Goal> goals, 
-        ICollection<Channel> channels, 
+        string name,
+        string description,
+        DateTime startDate,
+        DateTime endDate,
+        string status,
+        ICollection<Goal> goals,
+        ICollection<Channel> channels,
         int? stableId,
         CampaignUserId? campaignUserId)
     {
-        this.Name = name;
-        this.Description = description;
-        this.StartDate = startDate;
-        this.EndDate = endDate;
-        this.Status = status;
-        this.Goals = goals;
-        this.Channels = channels;
-        this.StableId = stableId;
+        Name = name;
+        Description = description;
+        StartDate = startDate;
+        EndDate = endDate;
+        Status = status;
+        Goals = goals;
+        Channels = channels;
+        StableId = stableId;
         CampaignUserId = campaignUserId;
     }
 
     public Campaign(CreateCampaignCommand command)
     {
-        this.Name = command.Name;
-        this.Description = command.Description;
-        this.StartDate = command.StartDate;
-        this.EndDate = command.EndDate;
-        this.Status = command.Status;
-        this.Goals = command.Goals;
-        this.Channels = command.Channel;
-        this.StableId = command.StableId;
+        Name = command.Name;
+        Description = command.Description;
+        StartDate = command.StartDate;
+        EndDate = command.EndDate;
+        Status = command.Status;
+        Goals = command.Goals;
+        Channels = command.Channel;
+        StableId = command.StableId;
         CampaignUserId = command.CampaignUserId ?? throw new ArgumentException("UserId must be set by the system");
     }
-    
+
     public void UpdateStatus(string status)
     {
-        this.Status = status;
+        Status = status;
     }
 
     public void AddGoal(Goal goal)
@@ -90,12 +89,11 @@ public class Campaign
         //Goal _goal = new Goal(goal.Description, goal.Metric, goal.TargetValue, goal.CurrentValue);
         //this.Goal.UpdateValues(goal.Description, goal.Metric, goal.TargetValue, goal.CurrentValue);  
         //this.Goal.UpdateValues(description, metric, targetValue, currentValue);
-        this.Goals.Add(goal);
+        Goals.Add(goal);
     }
-    
+
     public void AddChannel(Channel channel)
     {
-        this.Channels.Add(channel);
+        Channels.Add(channel);
     }
-    
 }

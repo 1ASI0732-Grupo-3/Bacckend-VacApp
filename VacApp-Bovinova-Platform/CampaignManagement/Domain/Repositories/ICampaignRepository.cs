@@ -6,9 +6,9 @@ namespace VacApp_Bovinova_Platform.CampaignManagement.Domain.Repositories;
 
 public interface ICampaignRepository : IBaseRepository<Campaign>
 {
-    Task<Campaign?> FindByNameAsync(string name);
-    Task<IEnumerable<Goal>> FindByCampaignId(int campaignId);
-    Task<IEnumerable<Channel>> FindChannelsByCampaignId(int campaignId);
-    Task<IEnumerable<Campaign>> FindByUserIdAsync(CampaignUserId userId);
-    Task<IEnumerable<Campaign>> FindAllAsync();
+    public Task<Campaign?> FindByNameAsync(string name);
+    public Task<IEnumerable<Goal>> FindByCampaignId(int campaignId);
+    public Task<IEnumerable<Channel>> FindChannelsByCampaignId(int campaignId);
+    public Task<IEnumerable<Campaign>> FindByUserIdAsync(CampaignUserId userId);
+    public Task<IEnumerable<Campaign>> FindAllAsync();
 }

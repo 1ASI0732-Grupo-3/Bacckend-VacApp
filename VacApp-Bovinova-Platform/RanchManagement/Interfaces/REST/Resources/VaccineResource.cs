@@ -4,5 +4,5 @@ public record VaccineResource(int Id,
     string Name,
     string? VaccineType,
     DateTime? VaccineDate,
-    string? VaccineImg, 
+    string? VaccineImg,
     int BovineId);

@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.RegularExpressions;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Commands;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.ValueObjects;
 
@@ -51,7 +50,7 @@ public class Vaccine
     /// </summary>
     [ForeignKey(nameof(BovineId))]
     public Bovine? Bovine { get; private set; }
-    
+
     /// <summary>
     /// User Identifier As Foreign Key
     /// </summary>

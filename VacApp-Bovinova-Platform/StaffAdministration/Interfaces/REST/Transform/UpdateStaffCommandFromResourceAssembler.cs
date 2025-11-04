@@ -10,9 +10,9 @@ public static class UpdateStaffCommandFromResourceAssembler
         return new UpdateStaffCommand
         (
             Id: id,
-            Name:resource.Name,
-            EmployeeStatus:resource.EmployeeStatus,
-            CampaignId:resource.CampaignId
+            Name: resource.Name,
+            EmployeeStatus: resource.EmployeeStatus,
+            CampaignId: resource.CampaignId
         );
     }
 }

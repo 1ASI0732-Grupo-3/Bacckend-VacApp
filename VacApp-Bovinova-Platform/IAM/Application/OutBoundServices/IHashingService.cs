@@ -1,8 +1,7 @@
-namespace VacApp_Bovinova_Platform.IAM.Application.OutBoundServices
+namespace VacApp_Bovinova_Platform.IAM.Application.OutBoundServices;
+
+public interface IHashingService
 {
-    public interface IHashingService
-    {
-        string GenerateHash(string password);
-        bool VerifyHash(string password, string hash);
-    }
+    public string GenerateHash(string password);
+    public bool VerifyHash(string password, string hash);
 }

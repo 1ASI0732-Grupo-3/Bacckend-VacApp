@@ -14,17 +14,17 @@ public class VaccineRepository(AppDbContext ctx)
     {
         return await Context.Set<Vaccine>().FirstOrDefaultAsync(f => f.Name == name);
     }
-    
+
     public async Task<IEnumerable<Vaccine>> FindByBovineIdAsync(int? bovineId)
     {
         return await Context.Set<Vaccine>().Where(f => f.BovineId == bovineId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Vaccine>> FindByUserIdAsync(RanchUserId userId)
     {
         return await Context.Set<Vaccine>().Where(f => f.RanchUserId == userId).ToListAsync();
     }
-    
+
     public async Task<IEnumerable<Vaccine>> FindAllAsync()
     {
         return await Context.Set<Vaccine>().ToListAsync();

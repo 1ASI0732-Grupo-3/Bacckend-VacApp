@@ -1,6 +1,7 @@
 using System.Net.Mime;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Commands;
@@ -8,7 +9,6 @@ using VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Queries;
 using VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Resources;
 using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
-using Microsoft.AspNetCore.Authorization;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
@@ -44,13 +44,18 @@ public class BovinesController(IBovineCommandService commandService,
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
+        }
 
         var command = CreateBovineCommandFromResourceAssembler.ToCommandFromResource(resource, userId);
         var result = await commandService.Handle(command);
 
         // If the result is null, it indicates an error in creation
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return CreatedAtAction(nameof(GetBovineById), new { id = result.Id },
             BovineResourceFromEntityAssembler.ToResourceFromEntity(result));
@@ -69,7 +74,9 @@ public class BovinesController(IBovineCommandService commandService,
         var userIdClaim = User.FindFirst(ClaimTypes.Sid)?.Value;
 
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+        {
             return Unauthorized("User not authenticated.");
+        }
 
         // Use the userId to fetch all bovines
         var bovines = await queryService.Handle(new GetAllBovinesQuery(userId));
@@ -122,7 +129,10 @@ public class BovinesController(IBovineCommandService commandService,
     {
         var command = UpdateBovineCommandFromResourceAssembler.ToCommandFromResource(id, resource);
         var result = await commandService.Handle(command);
-        if (result is null) return BadRequest();
+        if (result is null)
+        {
+            return BadRequest();
+        }
 
         return Ok(BovineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
@@ -140,7 +150,9 @@ public class BovinesController(IBovineCommandService commandService,
         var command = new DeleteBovineCommand(id);
         var result = await commandService.Handle(command);
         if (result is null)
+        {
             return NotFound(new { message = "Bovine not found" });
+        }
 
         return Ok(new { message = "Deleted successfully" });
     }

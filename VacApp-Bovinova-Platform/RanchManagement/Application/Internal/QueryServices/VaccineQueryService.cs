@@ -18,18 +18,18 @@ public class VaccineQueryService(IVaccineRepository vaccineRepository,
     {
         // Extract user type from JWT token
         var userTypeClaim = httpContextAccessor.HttpContext?.User.FindFirst("user_type")?.Value;
-        
+
         // If user_type is Admin, return all vaccines
         if (string.Equals(userTypeClaim, "Admin", StringComparison.OrdinalIgnoreCase))
         {
             return await vaccineRepository.FindAllAsync();
         }
-        
+
         // If user is not Admin, filter by userId
         return await vaccineRepository.FindByUserIdAsync(new RanchUserId(query.UserId));
     }
-    
-    
+
+
     /// <summary>
     /// Retrieves a Vaccine entity by its unique identifier.
     /// </summary>
@@ -39,7 +39,7 @@ public class VaccineQueryService(IVaccineRepository vaccineRepository,
     {
         return await vaccineRepository.FindByIdAsync(query.Id);
     }
-    
+
     /// <summary>
     /// Retrieves all vaccines by vaccine ID.
     /// </summary>

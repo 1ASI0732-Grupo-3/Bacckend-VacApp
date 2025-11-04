@@ -5,11 +5,11 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 
 public interface IStableCommandService
 {
-    Task<Stable?> Handle(CreateStableCommand command);
-    
+    public Task<Stable?> Handle(CreateStableCommand command);
+
     //Update
-    Task <Stable?> Handle(UpdateStableCommand command);
-    
+    public Task<Stable?> Handle(UpdateStableCommand command);
+
     //Delete
-    Task<Stable?> Handle(DeleteStableCommand command);
+    public Task<Stable?> Handle(DeleteStableCommand command);
 }

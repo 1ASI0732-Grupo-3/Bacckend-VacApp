@@ -1,6 +1,5 @@
 using VacApp_Bovinova_Platform.IAM.Application.OutBoundServices;
 using VacApp_Bovinova_Platform.IAM.Domain.Model.Aggregates;
-using VacApp_Bovinova_Platform.IAM.Domain.Model.Commands;
 using VacApp_Bovinova_Platform.IAM.Domain.Model.Commands.AdminCommands;
 using VacApp_Bovinova_Platform.IAM.Domain.Repositories;
 using VacApp_Bovinova_Platform.IAM.Domain.Services;
@@ -20,7 +19,9 @@ public class AdminCommandService(
 
         var existingAdmin = await adminRepository.FindByEmailAsync(admin.Email);
         if (existingAdmin != null)
+        {
             throw new Exception("Admin already exists with this email");
+        }
 
         try
         {
@@ -41,15 +42,21 @@ public class AdminCommandService(
         var admin = await adminRepository.FindByEmailAsync(command.Email);
 
         if (admin == null)
+        {
             throw new Exception("Admin not found");
-        
+        }
+
         // Validate "**@vacapp.com"
         if (!command.Email.EndsWith("@vacapp.com", StringComparison.OrdinalIgnoreCase))
+        {
             throw new Exception("Invalid admin email domain");
+        }
 
         // Admin can use any password
         if (!admin.ValidateLogin(command.Password))
+        {
             throw new Exception("Invalid login");
+        }
 
         return tokenService.GenerateToken(admin);
     }
@@ -60,14 +67,18 @@ public class AdminCommandService(
         {
             var admin = await adminRepository.FindByIdAsync(adminId);
             if (admin == null)
+            {
                 return false;
+            }
 
             // Verifies if email already exists
             if (!string.Equals(admin.Email, command.Email, StringComparison.OrdinalIgnoreCase))
             {
                 var existingAdmin = await adminRepository.FindByEmailAsync(command.Email);
                 if (existingAdmin != null)
+                {
                     throw new Exception("Email already exists");
+                }
             }
 
             admin.Update(command);
@@ -89,7 +100,9 @@ public class AdminCommandService(
         {
             var admin = await adminRepository.FindByIdAsync(adminId);
             if (admin == null)
+            {
                 return false;
+            }
 
             await adminRepository.DeleteAsync(admin);
             await unitOfWork.CompleteAsync();

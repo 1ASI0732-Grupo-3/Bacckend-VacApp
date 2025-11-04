@@ -8,15 +8,15 @@ public static class CreateCampaignCommandFromResourceAssembler
 {
     public static CreateCampaignCommand ToCommandFromResource(CreateCampaignResource resource, int userId) =>
         new CreateCampaignCommand(
-            resource.Name, 
-            resource.Description, 
-            resource.StartDate, 
-            resource.EndDate, 
-            resource.Status, 
-            resource.Goals, 
+            resource.Name,
+            resource.Description,
+            resource.StartDate,
+            resource.EndDate,
+            resource.Status,
+            resource.Goals,
             resource.Channels,
             resource.StableId,
             new CampaignUserId(userId)
             );
-    
+
 }

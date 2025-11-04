@@ -18,8 +18,10 @@ public class VaccineCommandService(
         var vaccine =
             await vaccineRepository.FindByNameAsync(command.Name);
         if (vaccine != null)
+        {
             throw new Exception($"Vaccine entity with name '{command.Name}' already exists.");
-        
+        }
+
         // Create a new Vaccine entity from the command data
         if (command.FileData is not null)
         {

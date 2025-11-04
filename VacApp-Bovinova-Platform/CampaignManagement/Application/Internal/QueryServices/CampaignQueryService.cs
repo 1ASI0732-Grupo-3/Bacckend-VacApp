@@ -18,13 +18,13 @@ public class CampaignQueryService(ICampaignRepository campaignRepository,
     {
         // Extract user type from JWT token
         var userTypeClaim = httpContextAccessor.HttpContext?.User.FindFirst("user_type")?.Value;
-        
+
         // If user_type is Admin, return all campaigns
         if (string.Equals(userTypeClaim, "Admin", StringComparison.OrdinalIgnoreCase))
         {
             return await campaignRepository.FindAllAsync();
         }
-        
+
         // If user is not Admin, filter by userId
         return await campaignRepository.FindByUserIdAsync(new CampaignUserId(query.UserId));
     }

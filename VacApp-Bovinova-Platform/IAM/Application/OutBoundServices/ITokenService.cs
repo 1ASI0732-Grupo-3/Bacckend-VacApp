@@ -1,11 +1,10 @@
 using VacApp_Bovinova_Platform.IAM.Domain.Model.Aggregates;
 
-namespace VacApp_Bovinova_Platform.IAM.Application.OutBoundServices
+namespace VacApp_Bovinova_Platform.IAM.Application.OutBoundServices;
+
+public interface ITokenService
 {
-    public interface ITokenService
-    {
-        string GenerateToken(User user);
-        Task<int?> ValidateToken(string token);
-        string GenerateToken(Admin admin);
-    }
+    public string GenerateToken(User user);
+    public Task<int?> ValidateToken(string token);
+    public string GenerateToken(Admin admin);
 }

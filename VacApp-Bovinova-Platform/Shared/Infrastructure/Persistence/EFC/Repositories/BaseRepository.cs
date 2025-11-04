@@ -12,7 +12,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     {
         Context = context;
     }
-    
+
     public async Task AddAsync(TEntity entity)
     {
         await Context.Set<TEntity>().AddAsync(entity);
@@ -37,10 +37,9 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     {
         return await Context.Set<TEntity>().ToListAsync();
     }
-    
+
     public async Task SaveChangesAsync()
     {
         await Context.SaveChangesAsync();
     }
-
 }

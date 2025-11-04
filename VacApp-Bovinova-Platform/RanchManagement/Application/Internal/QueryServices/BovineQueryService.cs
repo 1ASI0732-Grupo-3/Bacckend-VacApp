@@ -7,7 +7,7 @@ using VacApp_Bovinova_Platform.RanchManagement.Domain.Services;
 namespace VacApp_Bovinova_Platform.RanchManagement.Application.Internal.QueryServices;
 
 public class BovineQueryService(
-    IBovineRepository bovineRepository, 
+    IBovineRepository bovineRepository,
     IHttpContextAccessor httpContextAccessor) : IBovineQueryService
 {
     /// <summary>
@@ -19,17 +19,17 @@ public class BovineQueryService(
     {
         // Extract user type from JWT token
         var userTypeClaim = httpContextAccessor.HttpContext?.User.FindFirst("user_type")?.Value;
-        
+
         // If user_type is Admin, return all bovines
         if (string.Equals(userTypeClaim, "Admin", StringComparison.OrdinalIgnoreCase))
         {
             return await bovineRepository.FindAllAsync();
         }
-        
+
         // If user is not Admin, filter by userId
         return await bovineRepository.FindByUserIdAsync(new RanchUserId(query.UserId));
     }
-    
+
     /// <summary>
     /// Retrieves a Bovine entity by its unique identifier.
     /// </summary>
@@ -39,7 +39,7 @@ public class BovineQueryService(
     {
         return await bovineRepository.FindByIdAsync(query.Id);
     }
-    
+
     /// <summary>
     /// Retrieves all bovines by stable ID.
     /// </summary>

@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using VacApp_Bovinova_Platform.Shared.Infrastructure.Persistence.EFC.Configuration;
-using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Aggregates;
-using VacApp_Bovinova_Platform.VoiceCommand.Domain.Repositories;
-using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.ValueObjects;
 using VacApp_Bovinova_Platform.Shared.Infrastructure.Persistence.EFC.Repositories;
+using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Aggregates;
+using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.ValueObjects;
+using VacApp_Bovinova_Platform.VoiceCommand.Domain.Repositories;
 
 namespace VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Persistence.EFC.Repositories;
 
-public class VoiceRepository(AppDbContext context) 
+public class VoiceRepository(AppDbContext context)
     : BaseRepository<Voice>(context), IVoiceRepository
 {
     /// <summary>
@@ -116,10 +116,14 @@ public class VoiceRepository(AppDbContext context)
             .Where(vc => vc.UserId == userId);
 
         if (fromDate.HasValue)
+        {
             query = query.Where(vc => vc.CreatedAt >= fromDate.Value);
+        }
 
         if (toDate.HasValue)
+        {
             query = query.Where(vc => vc.CreatedAt <= toDate.Value);
+        }
 
         var commands = await query.ToListAsync();
 

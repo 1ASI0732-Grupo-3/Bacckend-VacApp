@@ -1,5 +1,3 @@
-using Swashbuckle.AspNetCore.Annotations;
-
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Resources;
 
 public record CreateBovineResource(
