@@ -1,0 +1,54 @@
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  # Chekout
+  - task: Checkout@1
+    displayName: "Checkout repository"
+
+  # .Net 8
+  - task: UseDotNet@2
+    displayName: "Setup .NET 8 SDK"
+    inputs:
+      packageType: 'sdk'
+      version: '8.0.x'
+
+  # Dependencies
+  - script: dotnet restore
+    displayName: "Restore dependencies"
+
+  # Compilation
+  - script: dotnet build --no-restore --configuration $(buildConfiguration)
+    displayName: "Build solution"
+
+  # Tests
+  - script: dotnet test --no-build --configuration $(buildConfiguration) --collect:"XPlat Code Coverage"
+    displayName: "Run unit tests"
+
+  # .editorconfig verification
+  - script: dotnet format --verify-no-changes
+    displayName: "Verify code format"
+
+  # Roslynator analysis
+  - script: |
+      dotnet tool install --global roslynator.dotnet.cli --version 4.10.0
+      export PATH="$PATH:/home/vsts/.dotnet/tools"
+      roslynator analyze . --severity-level warning --output roslynator-report.txt
+    displayName: "Run Roslynator analysis"
+
+  # Publish tests results 
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'roslynator-report.txt'
+      ArtifactName: 'analysis-reports'
+      publishLocation: 'Container'
+    displayName: "Publish analysis reports"
