@@ -2,13 +2,13 @@ namespace VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Aggregates;
 
 public class Goal
 {
-    public int Id { get; private set; }
+    public int Id { get; }
     public string Description { get; private set; }
     public string Metric { get; private set; }
     public int TargetValue { get; private set; }
     public int CurrentValue { get; private set; }
 
-    public int CampaignId { get; private set; }
+    public int CampaignId { get; }
 
     public Goal()
     {

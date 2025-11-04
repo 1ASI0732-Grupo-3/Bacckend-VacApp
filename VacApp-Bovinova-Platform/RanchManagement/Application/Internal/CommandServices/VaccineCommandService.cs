@@ -50,9 +50,7 @@ public class VaccineCommandService(
         return vaccine;
     }
 
-    /// <summary>
-    /// Handles the update of an existing vaccine entity.
-    /// </summary>
+    /// <summary>Handles the update of an existing vaccine entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -83,10 +81,7 @@ public class VaccineCommandService(
         return vaccine;
     }
 
-
-    /// <summary>
-    /// Handles the deletion of an existing vaccine entity.
-    /// </summary>
+    /// <summary>Handles the deletion of an existing vaccine entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>

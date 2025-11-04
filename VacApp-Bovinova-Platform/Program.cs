@@ -219,7 +219,6 @@ builder.Services.AddScoped<IVoiceQueryService, VoiceQueryService>();
 builder.Services.AddScoped<IVoiceTextToSpeechService, AzureTextToSpeechService>();
 builder.Services.AddScoped<IVoiceRepository, VoiceRepository>();
 
-
 /////////////////////////End Database Configuration/////////////////////////
 
 // Configure Authentication & Authorization

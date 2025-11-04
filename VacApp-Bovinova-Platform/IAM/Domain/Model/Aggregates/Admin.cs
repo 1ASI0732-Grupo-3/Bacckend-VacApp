@@ -11,7 +11,7 @@ public class Admin : IEntityWithCreatedUpdatedDate
     [Column("UpdatedAt")] public DateTimeOffset? UpdatedDate { get; set; }
 
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
     [Required]
     [StringLength(100, ErrorMessage = "Email length can't be more than 100.")]

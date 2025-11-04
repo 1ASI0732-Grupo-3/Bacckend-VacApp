@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roslynator>
+  <CodeAnalysis>
+    <Summary>
+      <Diagnostic Id="CS0168" Title="Variable is declared but never used" Count="1">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS0168)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS8602" Title="Dereference of a possibly null reference." Count="8">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8602)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS8603" Title="Possible null reference return." Count="1">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8603)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS8604" Title="Possible null reference argument." Count="7">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8604)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS8618" Title="Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable." Count="17">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8618)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS8625" Title="Cannot convert null literal to non-nullable reference type." Count="1">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8625)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="CS9107" Title="Parameter is captured into the state of the enclosing type and its value is also passed to the base constructor. The value might be captured by the base class as well." Count="2">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS9107)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="RCS1155" Title="Use StringComparison when comparing strings" Count="4">
+        <HelpLink>https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1155</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="RCS1263" Title="Invalid reference in a documentation comment" Count="2">
+        <HelpLink>https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1263</HelpLink>
+      </Diagnostic>
+    </Summary>
+    <Projects>
+      <Project Name="VacApp-Bovinova-Platform" FilePath="F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacApp-Bovinova-Platform.csproj">
+        <Diagnostics>
+          <Diagnostic Id="CS0168">
+            <Severity>Warning</Severity>
+            <Message>Variable is declared but never used</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\CampaignManagement\Application\Internal\CommandServices\CampaignCommandService.cs</FilePath>
+            <Location Line="26" Character="26" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\CampaignManagement\Application\Internal\CommandServices\CampaignCommandService.cs</FilePath>
+            <Location Line="53" Character="9" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\CampaignManagement\Application\Internal\CommandServices\CampaignCommandService.cs</FilePath>
+            <Location Line="93" Character="9" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\CampaignManagement\Application\Internal\CommandServices\CampaignCommandService.cs</FilePath>
+            <Location Line="36" Character="35" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Domain\Model\Aggregates\User.cs</FilePath>
+            <Location Line="45" Character="59" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Domain\Model\Aggregates\User.cs</FilePath>
+            <Location Line="55" Character="59" />
+          </Diagnostic>
+          <Diagnostic Id="CS9107">
+            <Severity>Warning</Severity>
+            <Message>Parameter is captured into the state of the enclosing type and its value is also passed to the base constructor. The value might be captured by the base class as well.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Repositories\AdminRepository.cs</FilePath>
+            <Location Line="9" Character="76" />
+          </Diagnostic>
+          <Diagnostic Id="CS9107">
+            <Severity>Warning</Severity>
+            <Message>Parameter is captured into the state of the enclosing type and its value is also passed to the base constructor. The value might be captured by the base class as well.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Repositories\UserRepository.cs</FilePath>
+            <Location Line="9" Character="74" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Tokens\JWT\Services\TokenService.cs</FilePath>
+            <Location Line="18" Character="43" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Tokens\JWT\Services\TokenService.cs</FilePath>
+            <Location Line="24" Character="40" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Tokens\JWT\Services\TokenService.cs</FilePath>
+            <Location Line="39" Character="43" />
+          </Diagnostic>
+          <Diagnostic Id="CS8604">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference argument.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\IAM\Infrastructure\Tokens\JWT\Services\TokenService.cs</FilePath>
+            <Location Line="68" Character="43" />
+          </Diagnostic>
+          <Diagnostic Id="CS8603">
+            <Severity>Warning</Severity>
+            <Message>Possible null reference return.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Application\Internal\QueryServices\BovineQueryService.cs</FilePath>
+            <Location Line="36" Character="16" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1155">
+            <Severity>Info</Severity>
+            <Message>Use StringComparison when comparing strings</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Domain\Model\Aggregates\Bovine.cs</FilePath>
+            <Location Line="83" Character="14" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1155">
+            <Severity>Info</Severity>
+            <Message>Use StringComparison when comparing strings</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Domain\Model\Aggregates\Bovine.cs</FilePath>
+            <Location Line="83" Character="58" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1155">
+            <Severity>Info</Severity>
+            <Message>Use StringComparison when comparing strings</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Domain\Model\Aggregates\Bovine.cs</FilePath>
+            <Location Line="101" Character="14" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1155">
+            <Severity>Info</Severity>
+            <Message>Use StringComparison when comparing strings</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Domain\Model\Aggregates\Bovine.cs</FilePath>
+            <Location Line="101" Character="58" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Interfaces\REST\Resources\UpdateBovineResource.cs</FilePath>
+            <Location Line="15" Character="19" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Interfaces\REST\Resources\UpdateBovineResource.cs</FilePath>
+            <Location Line="16" Character="19" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Interfaces\REST\Resources\UpdateStableResource.cs</FilePath>
+            <Location Line="11" Character="19" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\RanchManagement\Interfaces\REST\Resources\UpdateVaccineResource.cs</FilePath>
+            <Location Line="13" Character="19" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="62" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="78" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="90" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="114" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="134" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="17" Character="24" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="18" Character="28" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="19" Character="26" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\Shared\Infrastructure\Persistence\EFC\Configuration\AppDbContext.cs</FilePath>
+            <Location Line="20" Character="26" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\StaffAdministration\Interfaces\REST\Resources\UpdateStaffResource.cs</FilePath>
+            <Location Line="5" Character="19" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1263">
+            <Severity>Info</Severity>
+            <Message>Invalid reference in a documentation comment</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\StaffAdministration\Interfaces\REST\StaffController.cs</FilePath>
+            <Location Line="133" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="RCS1263">
+            <Severity>Info</Severity>
+            <Message>Invalid reference in a documentation comment</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\StaffAdministration\Interfaces\REST\StaffController.cs</FilePath>
+            <Location Line="134" Character="22" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\CampaignManagement\CampaignCommandServiceTests.cs</FilePath>
+            <Location Line="16" Character="36" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\CampaignManagement\CampaignCommandServiceTests.cs</FilePath>
+            <Location Line="17" Character="26" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\CampaignManagement\CampaignCommandServiceTests.cs</FilePath>
+            <Location Line="18" Character="32" />
+          </Diagnostic>
+          <Diagnostic Id="CS8602">
+            <Severity>Warning</Severity>
+            <Message>Dereference of a possibly null reference.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="65" Character="40" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="16" Character="34" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="17" Character="26" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="18" Character="30" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="19" Character="30" />
+          </Diagnostic>
+          <Diagnostic Id="CS8625">
+            <Severity>Warning</Severity>
+            <Message>Cannot convert null literal to non-nullable reference type.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\RanchManagement\BovineCommandServiceTests.cs</FilePath>
+            <Location Line="31" Character="83" />
+          </Diagnostic>
+          <Diagnostic Id="CS8618">
+            <Severity>Warning</Severity>
+            <Message>Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.</Message>
+            <FilePath>F:\Ciclo7\Diseno\Bacckend-VacApp\Bacckend-VacApp\VacApp-Bovinova-Platform\VacAppTests\TestSetup.cs</FilePath>
+            <Location Line="10" Character="43" />
+          </Diagnostic>
+        </Diagnostics>
+      </Project>
+    </Projects>
+  </CodeAnalysis>
+</Roslynator>

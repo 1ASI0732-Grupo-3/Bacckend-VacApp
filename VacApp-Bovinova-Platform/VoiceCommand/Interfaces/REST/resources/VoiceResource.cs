@@ -2,9 +2,7 @@ using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.ValueObjects;
 
 namespace VacApp_Bovinova_Platform.VoiceCommand.Interfaces.REST.resources;
 
-/// <summary>
-/// Resource representing a voice command
-/// </summary>
+/// <summary>Resource representing a voice command</summary>
 /// <param name="Id">Voice command ID</param>
 /// <param name="OriginalText">The original spoken text</param>
 /// <param name="CommandType">The type of command recognized</param>

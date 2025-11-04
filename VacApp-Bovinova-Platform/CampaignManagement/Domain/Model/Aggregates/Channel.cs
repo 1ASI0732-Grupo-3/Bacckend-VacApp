@@ -6,7 +6,7 @@ public class Channel
     public string Type { get; set; }
     public string Details { get; set; }
 
-    public int CampaignId { get; private set; }
+    public int CampaignId { get; }
 
     public Channel()
     {

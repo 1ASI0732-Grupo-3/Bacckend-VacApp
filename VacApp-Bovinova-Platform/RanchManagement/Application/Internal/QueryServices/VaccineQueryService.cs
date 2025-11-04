@@ -9,9 +9,7 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Application.Internal.QuerySer
 public class VaccineQueryService(IVaccineRepository vaccineRepository,
     IHttpContextAccessor httpContextAccessor) : IVaccineQueryService
 {
-    /// <summary>
-    /// Retrieves all Vaccines
-    /// </summary>
+    /// <summary>Retrieves all Vaccines</summary>
     /// <param name="query"></param>
     /// <returns></returns>
     public async Task<IEnumerable<Vaccine>> Handle(GetAllVaccinesQuery query)
@@ -29,10 +27,7 @@ public class VaccineQueryService(IVaccineRepository vaccineRepository,
         return await vaccineRepository.FindByUserIdAsync(new RanchUserId(query.UserId));
     }
 
-
-    /// <summary>
-    /// Retrieves a Vaccine entity by its unique identifier.
-    /// </summary>
+    /// <summary>Retrieves a Vaccine entity by its unique identifier.</summary>
     /// <param name="query"></param>
     /// <returns> The Vaccine entity with the specified ID, if found; otherwise, null. </returns>
     public async Task<Vaccine?> Handle(GetVaccinesByIdQuery query)
@@ -40,9 +35,7 @@ public class VaccineQueryService(IVaccineRepository vaccineRepository,
         return await vaccineRepository.FindByIdAsync(query.Id);
     }
 
-    /// <summary>
-    /// Retrieves all vaccines by vaccine ID.
-    /// </summary>
+    /// <summary>Retrieves all vaccines by vaccine ID.</summary>
     /// <param name="query"></param>
     /// <returns> A collection of vaccines associated with the specified vaccine ID. </returns>
     public async Task<IEnumerable<Vaccine>> Handle(GetVaccinesByBovineIdQuery query)

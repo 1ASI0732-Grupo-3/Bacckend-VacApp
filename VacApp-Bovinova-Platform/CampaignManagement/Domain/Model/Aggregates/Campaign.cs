@@ -7,30 +7,23 @@ namespace VacApp_Bovinova_Platform.CampaignManagement.Domain.Model.Aggregates;
 
 public class Campaign
 {
-    public int Id { get; private set; }
-    public string Name { get; private set; }
-    public string Description { get; private set; }
-    public DateTime StartDate { get; private set; }
-    public DateTime EndDate { get; private set; }
+    public int Id { get; }
+    public string Name { get; }
+    public string Description { get; }
+    public DateTime StartDate { get; }
+    public DateTime EndDate { get; }
     public string Status { get; private set; }
-    public ICollection<Goal> Goals { get; private set; }
-    public int GoalId { get; private set; }
-    public ICollection<Channel> Channels { get; private set; }
+    public ICollection<Goal> Goals { get; }
+    public int GoalId { get; }
+    public ICollection<Channel> Channels { get; }
 
-    /// <summary>
-    /// Stable FK
-    /// </summary>
+    /// <summary>Stable FK</summary>
     public int? StableId { get; private set; }
     [ForeignKey(nameof(StableId))]
-    public Stable? Stable { get; private set; }
+    public Stable? Stable { get; }
 
-    /// <summary>
-    /// User Identifier As Foreign Key
-    /// </summary>
+    /// <summary>User Identifier As Foreign Key</summary>
     public CampaignUserId? CampaignUserId { get; set; }
-
-
-
 
     protected Campaign()
     {
@@ -41,7 +34,6 @@ public class Campaign
         Status = string.Empty;
         Goals = new List<Goal>();
         Channels = new List<Channel>();
-
     }
 
     public Campaign(

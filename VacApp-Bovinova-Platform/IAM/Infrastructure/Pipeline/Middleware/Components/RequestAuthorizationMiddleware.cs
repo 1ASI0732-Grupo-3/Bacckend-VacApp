@@ -34,7 +34,6 @@ public class RequestAuthorizationMiddleware(RequestDelegate next)
         // get token from request header
         var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
-
         // if token is null then throw exception
         if (token == null)
         {

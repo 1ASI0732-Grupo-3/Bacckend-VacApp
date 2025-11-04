@@ -22,7 +22,6 @@ public class CampaignCommandService(ICampaignRepository campaignRepository, IUni
         {
             await campaignRepository.AddAsync(campaign);
             await unitOfWork.CompleteAsync();
-
         }
         catch (Exception e)
         {

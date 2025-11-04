@@ -2,9 +2,7 @@ using VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.ValueObjects;
 
 namespace VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Commands;
 
-/// <summary>
-/// Command to create a voice command record in the database
-/// </summary>
+/// <summary>Command to create a voice command record in the database</summary>
 /// <param name="OriginalText">The original spoken text</param>
 /// <param name="CommandType">The type of command recognized</param>
 /// <param name="Parameters">Parameters extracted from the command (as JSON string)</param>

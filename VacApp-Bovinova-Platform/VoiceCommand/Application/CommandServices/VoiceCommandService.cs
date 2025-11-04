@@ -26,10 +26,7 @@ public partial class VoiceCommandService(
     IUnitOfWork unitOfWork)
     : IVoiceCommandService
 {
-
-    /// <summary>
-    /// Handles the creation of a voice dataCommand record
-    /// </summary>
+    /// <summary>Handles the creation of a voice dataCommand record</summary>
     /// <param name="dataCommand">The dataCommand to create a voice dataCommand</param>
     /// <returns>The created voice dataCommand ID</returns>
     public async Task<int> Handle(CreateVoiceCommand dataCommand)
@@ -54,9 +51,7 @@ public partial class VoiceCommandService(
         }
     }
 
-    /// <summary>
-    /// Handles updating the execution status of a voice command
-    /// </summary>
+    /// <summary>Handles updating the execution status of a voice command</summary>
     /// <param name="dataExecutionCommand">The command to update voice command execution</param>
     /// <returns>Success indicator</returns>
     public async Task<bool> Handle(UpdateVoiceExecutionCommand dataExecutionCommand)
@@ -88,9 +83,7 @@ public partial class VoiceCommandService(
         }
     }
 
-    /// <summary>
-    /// Valid command patterns without "Vicky" to detect if only the trigger is missing
-    /// </summary>
+    /// <summary>Valid command patterns without "Vicky" to detect if only the trigger is missing</summary>
     private readonly string[] _commandPatternsWithoutVicky =
     [
         // User info patterns without Vicky at the beginning that must be detected as errors if the word "Vicky" is not present
@@ -397,7 +390,6 @@ public partial class VoiceCommandService(
                 data = new { stableId },
                 redirectUrl = $"https://vac-app-frontend-web.netlify.app/stables/{stableId}"
             };
-
         }
         catch (Exception ex)
         {
@@ -409,9 +401,7 @@ public partial class VoiceCommandService(
         }
     }
 
-    /// <summary>
-    /// Method to extract properties from anonymous objects
-    /// </summary>
+    /// <summary>Method to extract properties from anonymous objects</summary>
     /// <param name="response"></param>
     /// <returns></returns>
     private static bool GetRequiresFollowUpValue(object response)
@@ -421,9 +411,7 @@ public partial class VoiceCommandService(
         return requiresFollowUpProperty?.GetValue(response) as bool? ?? false;
     }
 
-    /// <summary>
-    /// Method to get user info
-    /// </summary>
+    /// <summary>Method to get user info</summary>
     /// <param name="userId"></param>
     /// <returns></returns>
     private async Task<object> ExecuteGetUserInfo(int userId)
@@ -464,9 +452,7 @@ public partial class VoiceCommandService(
         }
     }
 
-    /// <summary>
-    /// Method to navigate to settings
-    /// </summary>
+    /// <summary>Method to navigate to settings</summary>
     /// <returns></returns>
     private static object ExecuteNavigateToSettings()
     {
@@ -478,9 +464,7 @@ public partial class VoiceCommandService(
         };
     }
 
-    /// <summary>
-    /// Method to navigate to bovines management
-    /// </summary>
+    /// <summary>Method to navigate to bovines management</summary>
     /// <returns></returns>
     private static object ExecuteNavigateToBovines()
     {
@@ -492,9 +476,7 @@ public partial class VoiceCommandService(
         };
     }
 
-    /// <summary>
-    /// Method to navigate to stables management
-    /// </summary>
+    /// <summary>Method to navigate to stables management</summary>
     /// <returns></returns>
     private static object ExecuteNavigateToStables()
     {
@@ -506,9 +488,7 @@ public partial class VoiceCommandService(
         };
     }
 
-    /// <summary>
-    /// Method to get a confirmation message based on command type
-    /// </summary>
+    /// <summary>Method to get a confirmation message based on command type</summary>
     /// <param name="commandType"></param>
     /// <returns></returns>
     private static string GetConfirmationMessage(VoiceCommandType commandType)

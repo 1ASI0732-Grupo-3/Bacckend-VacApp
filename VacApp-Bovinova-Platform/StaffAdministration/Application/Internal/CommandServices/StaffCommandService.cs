@@ -9,9 +9,7 @@ namespace VacApp_Bovinova_Platform.StaffAdministration.Application.Internal.Comm
 public class StaffCommandService(IStaffRepository staffRepository,
     IUnitOfWork unitOfWork) : IStaffCommandService
 {
-    /// <summary>
-    /// Handles the creation of a new Staff entity.
-    /// </summary>
+    /// <summary>Handles the creation of a new Staff entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -42,9 +40,7 @@ public class StaffCommandService(IStaffRepository staffRepository,
         return staff;
     }
 
-    /// <summary>
-    /// Handles the update of an existing staff entity.
-    /// </summary>
+    /// <summary>Handles the update of an existing staff entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -75,10 +71,7 @@ public class StaffCommandService(IStaffRepository staffRepository,
         return staff;
     }
 
-
-    /// <summary>
-    /// Handles the deletion of an existing staff entity.
-    /// </summary>
+    /// <summary>Handles the deletion of an existing staff entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>

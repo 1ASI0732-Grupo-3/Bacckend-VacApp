@@ -7,53 +7,37 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Aggregates;
 
 public class Vaccine
 {
-    /// <summary>
-    /// Entity Identifier
-    /// </summary>
+    /// <summary>Entity Identifier</summary>
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
-    /// <summary>
-    /// Name of the Vaccine
-    /// </summary>
+    /// <summary>Name of the Vaccine</summary>
     [Required]
     [StringLength(100)]
     public string Name { get; private set; }
 
-    /// <summary>
-    /// Vaccine Type
-    /// </summary>
+    /// <summary>Vaccine Type</summary>
     [Required]
     [StringLength(100)]
     public string? VaccineType { get; private set; }
 
-    /// <summary>
-    /// Date of the Vaccination
-    /// </summary>
+    /// <summary>Date of the Vaccination</summary>
     [Required]
     public DateTime? VaccineDate { get; private set; }
 
-    /// <summary>
-    /// Vaccine Image
-    /// </summary>
+    /// <summary>Vaccine Image</summary>
     [Required]
     [StringLength(300)]
-    public string? VaccineImg { get; private set; }
+    public string? VaccineImg { get; }
 
-    /// <summary>
-    /// Bovine Identifier As Foreign Key
-    /// </summary>
+    /// <summary>Bovine Identifier As Foreign Key</summary>
     [Required]
     public int BovineId { get; private set; }
-    /// <summary>
-    /// Instancing the Bovine Entity for the Foreign Key
-    /// </summary>
+    /// <summary>Instancing the Bovine Entity for the Foreign Key</summary>
     [ForeignKey(nameof(BovineId))]
-    public Bovine? Bovine { get; private set; }
+    public Bovine? Bovine { get; }
 
-    /// <summary>
-    /// User Identifier As Foreign Key
-    /// </summary>
+    /// <summary>User Identifier As Foreign Key</summary>
     public RanchUserId? RanchUserId { get; set; }
 
     // Default constructor for EF Core

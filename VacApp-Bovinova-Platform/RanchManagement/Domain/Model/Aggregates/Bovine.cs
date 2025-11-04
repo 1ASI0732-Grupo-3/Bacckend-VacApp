@@ -7,67 +7,47 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Aggregates;
 
 public class Bovine
 {
-    /// <summary>
-    /// Entity Identifier
-    /// </summary>
+    /// <summary>Entity Identifier</summary>
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
-    /// <summary>
-    /// Name of the Bovine
-    /// </summary>
+    /// <summary>Name of the Bovine</summary>
     [Required]
     [StringLength(100)]
     public string Name { get; private set; }
 
-    /// <summary>
-    /// Gender of the Bovine (Male or Female)
-    /// </summary>
+    /// <summary>Gender of the Bovine (Male or Female)</summary>
     [Required]
     [StringLength(100)]
     public string Gender { get; private set; }
 
-    /// <summary>
-    /// Date of Birth of the Bovine
-    /// </summary>
+    /// <summary>Date of Birth of the Bovine</summary>
     [Required]
     public DateTime? BirthDate { get; private set; }
 
-    /// <summary>
-    /// Breed of the Bovine
-    /// </summary>
+    /// <summary>Breed of the Bovine</summary>
     [Required]
     [StringLength(100)]
     public string? Breed { get; private set; }
 
-    /// <summary>
-    /// Actual Location of the Bovine
-    /// </summary>
+    /// <summary>Actual Location of the Bovine</summary>
     [Required]
     [StringLength(100)]
     public string? Location { get; private set; }
 
-    /// <summary>
-    /// Stable Identifier As Foreign Key
-    /// </summary>
+    /// <summary>Stable Identifier As Foreign Key</summary>
     [Required]
     public int? StableId { get; private set; }
     [ForeignKey(nameof(StableId))]
-    public Stable? Stable { get; private set; }
+    public Stable? Stable { get; }
 
-    /// <summary>
-    /// Bovine Image
-    /// </summary>
+    /// <summary>Bovine Image</summary>
     [Required]
     [StringLength(300)]
-    public string? BovineImg { get; private set; }
+    public string? BovineImg { get; }
 
-
-    /// <summary>
-    /// User Identifier As Foreign Key
-    /// </summary>
+    /// <summary>User Identifier As Foreign Key</summary>
     public RanchUserId? RanchUserId { get; set; }
-
 
     // Default constructor for EF Core
     private Bovine()

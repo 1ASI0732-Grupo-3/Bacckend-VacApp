@@ -6,28 +6,20 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Domain.Model.Aggregates;
 
 public class Stable
 {
-    /// <summary>
-    /// Identifier for the Stable entity
-    /// </summary>
+    /// <summary>Identifier for the Stable entity</summary>
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
-    /// <summary>
-    /// Name of the Stable
-    /// </summary>
+    /// <summary>Name of the Stable</summary>
     [Required]
     [StringLength(50)]
     public string Name { get; private set; }
 
-    /// <summary>
-    /// Max. Capacity of the Stable
-    /// </summary>
+    /// <summary>Max. Capacity of the Stable</summary>
     [Required]
     public int Limit { get; private set; }
 
-    /// <summary>
-    /// User Identifier As Foreign Key
-    /// </summary>
+    /// <summary>User Identifier As Foreign Key</summary>
     public RanchUserId? RanchUserId { get; set; }
 
     // Default constructor for EF Core

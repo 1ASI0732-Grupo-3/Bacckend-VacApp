@@ -12,9 +12,7 @@ using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
-/// <summary>
-/// API controller for managing bovines
-/// </summary>
+/// <summary>API controller for managing bovines</summary>
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("/api/v1/bovines")]
@@ -23,9 +21,7 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 public class BovinesController(IBovineCommandService commandService,
     IBovineQueryService queryService) : ControllerBase
 {
-    /// <summary>
-    /// Posts a new bovine to the system.
-    /// </summary>
+    /// <summary>Posts a new bovine to the system.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPost]
@@ -61,7 +57,6 @@ public class BovinesController(IBovineCommandService commandService,
             BovineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-
     [HttpGet]
     [SwaggerOperation(
         Summary = "Get all bovines",
@@ -84,10 +79,7 @@ public class BovinesController(IBovineCommandService commandService,
         return Ok(bovineResources);
     }
 
-
-    /// <summary>
-    /// Gets a bovine by its ID.
-    /// </summary>
+    /// <summary>Gets a bovine by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
@@ -99,9 +91,7 @@ public class BovinesController(IBovineCommandService commandService,
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Gets all bovines by stable ID.
-    /// </summary>
+    /// <summary>Gets all bovines by stable ID.</summary>
     /// <param name="stableId"></param>
     /// <returns></returns>
     [HttpGet("stable/{stableId}")]
@@ -117,9 +107,7 @@ public class BovinesController(IBovineCommandService commandService,
         return Ok(bovineResources);
     }
 
-    /// <summary>
-    /// Updates a bovine by its ID.
-    /// </summary>
+    /// <summary>Updates a bovine by its ID.</summary>
     /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
@@ -137,9 +125,7 @@ public class BovinesController(IBovineCommandService commandService,
         return Ok(BovineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Deletes a bovine by its ID.
-    /// </summary>
+    /// <summary>Deletes a bovine by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("{id}")]

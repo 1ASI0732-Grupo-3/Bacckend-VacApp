@@ -28,6 +28,7 @@
           "NUnit": "3.14.0",
           "NUnit3TestAdapter": "4.6.0",
           "Newtonsoft.Json": "13.0.3",
+          "Roslynator.Analyzers": "4.14.1",
           "Swashbuckle.AspNetCore": "6.9.0",
           "Swashbuckle.AspNetCore.Annotations": "6.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.2.1",
@@ -762,32 +763,32 @@
           "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.core.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.core.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
             "rid": "win-arm64",
@@ -797,27 +798,27 @@
           "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.core.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.codec.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
             "rid": "win-x64",
@@ -827,27 +828,27 @@
           "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.core.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.codec.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           },
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
             "rid": "win-x86",
@@ -857,7 +858,7 @@
           "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.41.1.28"
           }
         }
       },
@@ -1392,27 +1393,27 @@
           "runtimes/win-x64/native/comerr64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.1.0.0"
           },
           "runtimes/win-x64/native/gssapi64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.1.0.0"
           },
           "runtimes/win-x64/native/k5sprt64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.1.0.0"
           },
           "runtimes/win-x64/native/krb5_64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.1.0.0"
           },
           "runtimes/win-x64/native/krbcc64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.1.0.0"
           }
         }
       },
@@ -1454,6 +1455,7 @@
         }
       },
       "NUnit3TestAdapter/4.6.0": {},
+      "Roslynator.Analyzers/4.14.1": {},
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
@@ -2558,6 +2560,13 @@
       "sha512": "sha512-R7e1+a4vuV/YS+ItfL7f//rG+JBvVeVLX4mHzFEZo4W1qEKl8Zz27AqvQSAqo+BtIzUCo4aAJMYa56VXS4hudw==",
       "path": "nunit3testadapter/4.6.0",
       "hashPath": "nunit3testadapter.4.6.0.nupkg.sha512"
+    },
+    "Roslynator.Analyzers/4.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yMSjze/xMYDF6PCE60/ULWx0tttNyKAndw2KijNxbKil0FX8nvDeEneDZGma8Uifk17RlfZqIXxf1mmBmhRHjg==",
+      "path": "roslynator.analyzers/4.14.1",
+      "hashPath": "roslynator.analyzers.4.14.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",

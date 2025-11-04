@@ -10,9 +10,7 @@ namespace VacApp_Bovinova_Platform.VoiceCommand.Infrastructure.Persistence.EFC.R
 public class VoiceRepository(AppDbContext context)
     : BaseRepository<Voice>(context), IVoiceRepository
 {
-    /// <summary>
-    /// Finds all voice commands for a specific user
-    /// </summary>
+    /// <summary>Finds all voice commands for a specific user</summary>
     /// <param name="userId">User ID</param>
     /// <returns>List of voice commands for the user</returns>
     public async Task<IEnumerable<Voice>> FindByUserIdAsync(int userId)
@@ -23,9 +21,7 @@ public class VoiceRepository(AppDbContext context)
             .ToListAsync();
     }
 
-    /// <summary>
-    /// Finds voice commands for a user with pagination
-    /// </summary>
+    /// <summary>Finds voice commands for a user with pagination</summary>
     /// <param name="userId">User ID</param>
     /// <param name="page">Page number (0-based)</param>
     /// <param name="size">Page size</param>
@@ -40,9 +36,7 @@ public class VoiceRepository(AppDbContext context)
             .ToListAsync();
     }
 
-    /// <summary>
-    /// Finds voice commands by user and command type
-    /// </summary>
+    /// <summary>Finds voice commands by user and command type</summary>
     /// <param name="userId">User ID</param>
     /// <param name="commandType">Command type</param>
     /// <returns>List of voice commands matching the criteria</returns>
@@ -54,9 +48,7 @@ public class VoiceRepository(AppDbContext context)
             .ToListAsync();
     }
 
-    /// <summary>
-    /// Gets recent voice commands for a user
-    /// </summary>
+    /// <summary>Gets recent voice commands for a user</summary>
     /// <param name="userId">User ID</param>
     /// <param name="count">Number of recent commands to retrieve</param>
     /// <returns>Recent voice commands</returns>
@@ -69,9 +61,7 @@ public class VoiceRepository(AppDbContext context)
             .ToListAsync();
     }
 
-    /// <summary>
-    /// Counts total voice commands for a user
-    /// </summary>
+    /// <summary>Counts total voice commands for a user</summary>
     /// <param name="userId">User ID</param>
     /// <returns>Total count of voice commands</returns>
     public async Task<int> CountByUserIdAsync(int userId)
@@ -80,9 +70,7 @@ public class VoiceRepository(AppDbContext context)
             .CountAsync(vc => vc.UserId == userId);
     }
 
-    /// <summary>
-    /// Counts successful voice commands for a user
-    /// </summary>
+    /// <summary>Counts successful voice commands for a user</summary>
     /// <param name="userId">User ID</param>
     /// <returns>Count of successful voice commands</returns>
     public async Task<int> CountSuccessfulByUserIdAsync(int userId)
@@ -91,9 +79,7 @@ public class VoiceRepository(AppDbContext context)
             .CountAsync(vc => vc.UserId == userId && vc.IsValid && vc.WasExecuted);
     }
 
-    /// <summary>
-    /// Counts voice commands by type for a user
-    /// </summary>
+    /// <summary>Counts voice commands by type for a user</summary>
     /// <param name="userId">User ID</param>
     /// <param name="commandType">Command type</param>
     /// <returns>Count of commands of the specified type</returns>
@@ -103,9 +89,7 @@ public class VoiceRepository(AppDbContext context)
             .CountAsync(vc => vc.UserId == userId && vc.CommandType == commandType);
     }
 
-    /// <summary>
-    /// Gets voice command statistics for a user within a date range
-    /// </summary>
+    /// <summary>Gets voice command statistics for a user within a date range</summary>
     /// <param name="userId">User ID</param>
     /// <param name="fromDate">Start date (optional)</param>
     /// <param name="toDate">End date (optional)</param>
@@ -139,9 +123,7 @@ public class VoiceRepository(AppDbContext context)
     }
 }
 
-/// <summary>
-/// Voice command statistics data transfer object
-/// </summary>
+/// <summary>Voice command statistics data transfer object</summary>
 public class VoiceCommandStats
 {
     public int TotalCommands { get; set; }

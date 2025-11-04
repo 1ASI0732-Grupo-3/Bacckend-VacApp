@@ -1,8 +1,6 @@
 namespace VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Commands;
 
-/// <summary>
-/// Command to update the execution status of a voice command
-/// </summary>
+/// <summary>Command to update the execution status of a voice command</summary>
 /// <param name="Id">Voice command ID</param>
 /// <param name="WasExecuted">Whether execution was successful</param>
 /// <param name="ResponseMessage">Response message (if successful)</param>

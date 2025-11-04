@@ -12,9 +12,7 @@ using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
-/// <summary>
-/// API controller for managing stables
-/// </summary>
+/// <summary>API controller for managing stables</summary>
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("/api/v1/stables")]
@@ -89,9 +87,7 @@ public class StableController(
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Updates a stable by its ID.
-    /// </summary>
+    /// <summary>Updates a stable by its ID.</summary>
     /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
@@ -108,9 +104,7 @@ public class StableController(
         return Ok(StableResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Deletes a stable by its ID.
-    /// </summary>
+    /// <summary>Deletes a stable by its ID.</summary>
     /// <param name="id">Stable ID</param>
     /// <returns>Success message or NotFound</returns>
     [HttpDelete("{id}")]
@@ -129,9 +123,7 @@ public class StableController(
         return Ok(new { message = "Deleted successfully" });
     }
 
-    /// <summary>
-    /// Get stable by name
-    /// </summary>
+    /// <summary>Get stable by name</summary>
     /// <param name="name"></param>
     /// <returns></returns>
     [HttpGet("name/{name}")]

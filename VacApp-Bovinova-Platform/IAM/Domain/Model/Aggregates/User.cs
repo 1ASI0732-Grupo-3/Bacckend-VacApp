@@ -11,7 +11,7 @@ public class User : IEntityWithCreatedUpdatedDate
     [Column("UpdatedAt")] public DateTimeOffset? UpdatedDate { get; set; }
 
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
     [Required]
     [StringLength(50, ErrorMessage = "Username must be between 3 and 50 characters long.")]
@@ -19,7 +19,7 @@ public class User : IEntityWithCreatedUpdatedDate
 
     [Required]
     [StringLength(100, ErrorMessage = "Password must be between 6 and 100 characters long.")]
-    public string Password { get; private set; }
+    public string Password { get; }
 
     [Required]
     [EmailAddress]

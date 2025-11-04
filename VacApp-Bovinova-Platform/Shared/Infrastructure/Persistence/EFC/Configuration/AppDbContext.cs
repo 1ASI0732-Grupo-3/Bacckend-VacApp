@@ -92,7 +92,6 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasColumnName("user_id")
             .IsRequired();
 
-
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Staff Administration BC -------------------------------------------------------------------------------------- */

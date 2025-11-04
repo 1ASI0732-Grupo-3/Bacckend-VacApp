@@ -37,9 +37,7 @@ public class UserQueryService(
         return await userRepository.FindByNameAsync(query.UserName);
     }
 
-    /// <summary>
-    /// Method to get user info along with statistics such as total bovines, stables, campaigns, and vaccinations.
-    /// </summary>
+    /// <summary>Method to get user info along with statistics such as total bovines, stables, campaigns, and vaccinations.</summary>
     /// <param name="userId"></param>
     /// <returns></returns>
     public async Task<UserInfoResource?> GetUserInfoWithStatsAsync(int userId)

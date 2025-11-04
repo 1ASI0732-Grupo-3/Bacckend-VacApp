@@ -21,9 +21,7 @@ public class UserController(
     IUserQueryService queryService
     ) : ControllerBase
 {
-    /// <summary>
-    /// Handles the user sign-up process.
-    /// </summary>
+    /// <summary>Handles the user sign-up process.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPost("sign-up")]
@@ -38,9 +36,7 @@ public class UserController(
         return CreatedAtAction(nameof(SignUp), userResource);
     }
 
-    /// <summary>
-    /// Handles the user sign-in process.
-    /// </summary>
+    /// <summary>Handles the user sign-in process.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPost("sign-in")]
@@ -68,9 +64,7 @@ public class UserController(
         return Ok(userResource);
     }
 
-    /// <summary>
-    /// Handles the retrieval of user information.
-    /// </summary>
+    /// <summary>Handles the retrieval of user information.</summary>
     /// <returns></returns>
     [HttpGet("get-info")]
     [SwaggerResponse(StatusCodes.Status200OK, "User info", typeof(UserInfoResource))]
@@ -98,9 +92,7 @@ public class UserController(
         }
     }
 
-    /// <summary>
-    /// Handles the update of a user's profile.
-    /// </summary>
+    /// <summary>Handles the update of a user's profile.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPut("update-profile")]
@@ -145,9 +137,7 @@ public class UserController(
         }
     }
 
-    /// <summary>
-    /// Handles the deletion of a user's account.
-    /// </summary>
+    /// <summary>Handles the deletion of a user's account.</summary>
     /// <returns></returns>
     [HttpDelete("delete-account")]
     [SwaggerResponse(StatusCodes.Status200OK, "Account deleted successfully")]
@@ -179,9 +169,7 @@ public class UserController(
         }
     }
 
-    /// <summary>
-    /// Handles the retrieval of the user's profile information.
-    /// </summary>
+    /// <summary>Handles the retrieval of the user's profile information.</summary>
     /// <returns></returns>
     [HttpGet("profile")]
     [SwaggerResponse(StatusCodes.Status200OK, "User profile", typeof(UserProfileResource))]

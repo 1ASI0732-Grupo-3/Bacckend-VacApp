@@ -3,14 +3,10 @@ using VacApp_Bovinova_Platform.VoiceCommand.Interfaces.REST.resources;
 
 namespace VacApp_Bovinova_Platform.VoiceCommand.Interfaces.REST.transform;
 
-/// <summary>
-/// Assembler to transform Voice entity to VoiceResource
-/// </summary>
+/// <summary>Assembler to transform Voice entity to VoiceResource</summary>
 public static class VoiceResourceFromEntityAssembler
 {
-    /// <summary>
-    /// Transforms a Voice entity to a VoiceResource
-    /// </summary>
+    /// <summary>Transforms a Voice entity to a VoiceResource</summary>
     /// <param name="entity">The Voice entity</param>
     /// <returns>VoiceResource</returns>
     public static VoiceResource ToResourceFromEntity(Voice entity)
@@ -30,9 +26,7 @@ public static class VoiceResourceFromEntityAssembler
         );
     }
 
-    /// <summary>
-    /// Transforms a collection of Voice entities to VoiceResources
-    /// </summary>
+    /// <summary>Transforms a collection of Voice entities to VoiceResources</summary>
     /// <param name="entities">Collection of Voice entities</param>
     /// <returns>Collection of VoiceResources</returns>
     public static IEnumerable<VoiceResource> ToResourcesFromEntities(IEnumerable<Voice> entities)

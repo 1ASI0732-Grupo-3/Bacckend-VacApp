@@ -9,7 +9,7 @@ namespace VacApp_Bovinova_Platform.StaffAdministration.Domain.Model.Aggregates;
 public class Staff
 {
     [Required]
-    public int Id { get; private set; }
+    public int Id { get; }
 
     [Required]
     [StringLength(100)]
@@ -20,12 +20,9 @@ public class Staff
 
     public int? CampaignId { get; private set; }
     [ForeignKey(nameof(CampaignId))]
-    public Campaign? Campaign { get; private set; }
+    public Campaign? Campaign { get; }
 
-
-    /// <summary>
-    /// User Identifier As Foreign Key
-    /// </summary>
+    /// <summary>User Identifier As Foreign Key</summary>
     public StaffUserId? StaffUserId { get; set; }
 
     public Staff()
@@ -49,7 +46,6 @@ public class Staff
         EmployeeStatus = new EmployeeStatus(command.EmployeeStatus);
         CampaignId = command.CampaignId ?? throw new ArgumentException("CampaignId is required");
         StaffUserId = command.StaffUserId ?? throw new ArgumentException("StaffUserId must be set by the system");
-
     }
 
     // Update method for modifying an existing Staff

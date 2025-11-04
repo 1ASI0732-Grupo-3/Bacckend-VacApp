@@ -14,5 +14,4 @@ public interface IUserRepostory : IBaseRepository<User>
     public Task UpdateAsync(User user);
 
     public Task DeleteAsync(User user);
-
 }

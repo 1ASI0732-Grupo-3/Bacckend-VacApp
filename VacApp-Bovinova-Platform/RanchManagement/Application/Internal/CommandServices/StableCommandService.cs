@@ -36,10 +36,7 @@ public class StableCommandService(IStableRepository stableRepository,
         return stable;
     }
 
-
-    /// <summary>
-    /// Handles the update of an existing stable entity.
-    /// </summary>
+    /// <summary>Handles the update of an existing stable entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -70,10 +67,7 @@ public class StableCommandService(IStableRepository stableRepository,
         return stable;
     }
 
-
-    /// <summary>
-    /// Handles the deletion of an existing stable entity.
-    /// </summary>
+    /// <summary>Handles the deletion of an existing stable entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>

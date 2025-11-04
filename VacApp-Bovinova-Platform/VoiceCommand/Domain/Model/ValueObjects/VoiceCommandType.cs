@@ -17,4 +17,3 @@ public enum VoiceCommandType
     // VoiceCommandTypeIndex: 6
     Unknown
 }
-

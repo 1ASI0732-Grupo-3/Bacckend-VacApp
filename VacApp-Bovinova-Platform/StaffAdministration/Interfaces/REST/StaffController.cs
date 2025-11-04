@@ -11,9 +11,7 @@ using VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST.Transform;
 
 namespace VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST;
 
-/// <summary>
-/// API controller for managing staffs
-/// </summary>
+/// <summary>API controller for managing staffs</summary>
 [Microsoft.AspNetCore.Authorization.Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("/api/v1/staff")]
@@ -22,9 +20,7 @@ namespace VacApp_Bovinova_Platform.StaffAdministration.Interfaces.REST;
 public class StaffController(IStaffCommandService commandService,
     IStaffQueryService queryService) : ControllerBase
 {
-    /// <summary>
-    /// Posts a new staff to the system.
-    /// </summary>
+    /// <summary>Posts a new staff to the system.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPost]
@@ -49,9 +45,7 @@ public class StaffController(IStaffCommandService commandService,
             StaffResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Gets all staffs in the system.
-    /// </summary>
+    /// <summary>Gets all staffs in the system.</summary>
     /// <returns></returns>
     [HttpGet]
     [SwaggerOperation(
@@ -74,9 +68,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(staffResources);
     }
 
-    /// <summary>
-    /// Gets a staff by its ID.
-    /// </summary>
+    /// <summary>Gets a staff by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
@@ -93,9 +85,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Gets all staffs by campaign ID.
-    /// </summary>
+    /// <summary>Gets all staffs by campaign ID.</summary>
     /// <param name="campaignId"></param>
     /// <returns></returns>
     [HttpGet("search-by-campaign/{campaignId}")]
@@ -108,7 +98,7 @@ public class StaffController(IStaffCommandService commandService,
         var getStaffByCampaignIdQuery = new GetStaffByCampaignIdQuery(campaignId);
         var staffs = await queryService.Handle(getStaffByCampaignIdQuery);
 
-        if (staffs == null || !staffs.Any())
+        if (staffs?.Any() != true)
         {
             return NotFound();
         }
@@ -117,9 +107,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(staffResources);
     }
 
-    /// <summary>
-    /// Gets all staffs by employee status.
-    /// </summary>
+    /// <summary>Gets all staffs by employee status.</summary>
     /// <param name="employeeStatus"></param>
     /// <returns></returns>
     [HttpGet("search-by-employee-status/{employeeStatus}")]
@@ -132,7 +120,7 @@ public class StaffController(IStaffCommandService commandService,
         var getStaffByEmployeeStatusQuery = new GetStaffByEmployeeStatusQuery(employeeStatus);
         var staffs = await queryService.Handle(getStaffByEmployeeStatusQuery);
 
-        if (staffs == null || !staffs.Any())
+        if (staffs?.Any() != true)
         {
             return NotFound();
         }
@@ -141,9 +129,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(staffResources);
     }
 
-    /// <summary>
-    /// Gets a staff by its name.
-    /// </summary>
+    /// <summary>Gets a staff by its name.</summary>
     /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
@@ -165,9 +151,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Updates a staff by its ID.
-    /// </summary>
+    /// <summary>Updates a staff by its ID.</summary>
     /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
@@ -184,9 +168,7 @@ public class StaffController(IStaffCommandService commandService,
         return Ok(StaffResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Deletes a staff by its ID.
-    /// </summary>
+    /// <summary>Deletes a staff by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("{id}")]

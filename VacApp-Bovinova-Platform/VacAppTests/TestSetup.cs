@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace VacAppTests;
 
-
 // Para las pruebas de integracion, porfi no tocar xd
 [TestFixture]
 public abstract class TestSetup

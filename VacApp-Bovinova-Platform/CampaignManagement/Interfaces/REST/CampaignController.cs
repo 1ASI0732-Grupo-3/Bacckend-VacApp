@@ -85,7 +85,6 @@ public class CampaignController(ICampaignCommandService campaignCommandService, 
         return Ok(new { message = "Deleted successfully" });
     }
 
-
     [HttpPatch("{id}/update-status")]
     public async Task<ActionResult> UpdateCampaignStatus([FromRoute] int id, [FromBody] UpdateCampaignStatusResource resource)
     {

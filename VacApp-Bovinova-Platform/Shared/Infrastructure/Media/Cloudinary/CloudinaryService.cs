@@ -3,7 +3,6 @@ using dotenv.net;
 using VacApp_Bovinova_Platform.Shared.Application.OutboundServices;
 using CloudinarySdk = CloudinaryDotNet;
 
-
 namespace VacApp_Bovinova_Platform.Shared.Infrastructure.Media.Cloudinary;
 
 public class CloudinaryService : IMediaStorageService

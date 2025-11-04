@@ -4,30 +4,22 @@ namespace VacApp_Bovinova_Platform.VoiceCommand.Domain.Services;
 
 public interface IVoiceCommandService
 {
-    /// <summary>
-    /// Handles the creation of a voice dataCommand record
-    /// </summary>
+    /// <summary>Handles the creation of a voice dataCommand record</summary>
     /// <param name="dataCommand">The dataCommand to create a voice dataCommand</param>
     /// <returns>The created voice dataCommand ID</returns>
     public Task<int> Handle(CreateVoiceCommand dataCommand);
 
-    /// <summary>
-    /// Handles updating the execution status of a voice command
-    /// </summary>
+    /// <summary>Handles updating the execution status of a voice command</summary>
     /// <param name="dataExecutionCommand">The command to update voice command execution</param>
     /// <returns>Success indicator</returns>
     public Task<bool> Handle(UpdateVoiceExecutionCommand dataExecutionCommand);
 
-    /// <summary>
-    /// Handles processing of a voice data command
-    /// </summary>
+    /// <summary>Handles processing of a voice data command</summary>
     /// <param name="dataCommand"></param>
     /// <returns></returns>
     public Task<object> Handle(ProcessVoiceCommand dataCommand);
 
-    /// <summary>
-    /// Handles execution of a voice data command
-    /// </summary>
+    /// <summary>Handles execution of a voice data command</summary>
     /// <param name="dataCommand"></param>
     /// <returns></returns>
     public Task<object> Handle(ExecuteVoiceCommand dataCommand);

@@ -296,3 +296,43 @@ dotnet_diagnostic.IDE0055.severity = warning
 
 # Remove unnecessary suppressions
 dotnet_diagnostic.IDE0079.severity = warning
+
+# Roslynator Analyzers - Configuración API
+
+dotnet_analyzer_diagnostic.category-Roslynator.severity = suggestion
+
+dotnet_diagnostic.RCS1021.severity = warning   
+dotnet_diagnostic.RCS1118.severity = warning   
+dotnet_diagnostic.RCS1036.severity = warning   
+dotnet_diagnostic.RCS1123.severity = warning   
+dotnet_diagnostic.RCS1213.severity = warning   
+dotnet_diagnostic.RCS1045.severity = suggestion 
+dotnet_diagnostic.RCS1158.severity = warning   
+
+dotnet_diagnostic.RCS1002.severity = suggestion 
+dotnet_diagnostic.RCS1032.severity = suggestion 
+dotnet_diagnostic.RCS1084.severity = suggestion 
+dotnet_diagnostic.RCS1215.severity = warning   
+dotnet_diagnostic.RCS1046.severity = suggestion 
+dotnet_diagnostic.RCS1128.severity = suggestion  
+dotnet_diagnostic.RCS1194.severity = suggestion 
+
+dotnet_diagnostic.RCS1077.severity = warning   
+dotnet_diagnostic.RCS1201.severity = warning   
+dotnet_diagnostic.RCS1100.severity = warning   
+dotnet_diagnostic.RCS1170.severity = warning   
+dotnet_diagnostic.RCS1188.severity = warning   
+dotnet_diagnostic.RCS1217.severity = warning   
+
+dotnet_diagnostic.RCS1018.severity = warning   
+dotnet_diagnostic.RCS1024.severity = warning   
+dotnet_diagnostic.RCS1072.severity = warning   
+dotnet_diagnostic.RCS1146.severity = warning   
+dotnet_diagnostic.RCS1210.severity = warning   
+dotnet_diagnostic.RCS1211.severity = warning   
+dotnet_diagnostic.RCS1196.severity = warning   
+
+dotnet_diagnostic.RCS1003.severity = suggestion 
+dotnet_diagnostic.RCS1216.severity = warning   
+dotnet_diagnostic.RCS1221.severity = warning   
+dotnet_diagnostic.RCS1243.severity = warning   

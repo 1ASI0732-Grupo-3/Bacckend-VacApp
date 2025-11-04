@@ -3,5 +3,4 @@ namespace VacApp_Bovinova_Platform.IAM.Infrastructure.Pipeline.Middleware.Attrib
 [AttributeUsage(AttributeTargets.Method)]
 public class AllowAnonymousAttribute : Attribute
 {
-
 }

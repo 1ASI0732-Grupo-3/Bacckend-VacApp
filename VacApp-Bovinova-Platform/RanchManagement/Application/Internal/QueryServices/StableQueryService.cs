@@ -9,9 +9,7 @@ namespace VacApp_Bovinova_Platform.RanchManagement.Application.Internal.QuerySer
 public class StableQueryService(IStableRepository stableRepository,
     IHttpContextAccessor httpContextAccessor) : IStableQueryService
 {
-    /// <summary>
-    /// Retrieves all Stables
-    /// </summary>
+    /// <summary>Retrieves all Stables</summary>
     /// <param name="query"></param>
     /// <returns></returns>
     public async Task<IEnumerable<Stable>> Handle(GetAllStablesQuery query)
@@ -29,9 +27,7 @@ public class StableQueryService(IStableRepository stableRepository,
         return await stableRepository.FindByUserIdAsync(new RanchUserId(query.UserId));
     }
 
-    /// <summary>
-    /// Retrieves a Stable entity by its unique identifier.
-    /// </summary>
+    /// <summary>Retrieves a Stable entity by its unique identifier.</summary>
     /// <param name="query"></param>
     /// <returns> The Stable entity with the specified ID, if found; otherwise, null. </returns>
     public async Task<Stable?> Handle(GetStablesByIdQuery query)
@@ -39,9 +35,7 @@ public class StableQueryService(IStableRepository stableRepository,
         return await stableRepository.FindByIdAsync(query.Id);
     }
 
-    /// <summary>
-    /// Retrieves a Stable entity by its name.
-    /// </summary>
+    /// <summary>Retrieves a Stable entity by its name.</summary>
     /// <param name="query"></param>
     /// <returns></returns>
     public async Task<Stable?> Handle(GetStableByNameQuery query)

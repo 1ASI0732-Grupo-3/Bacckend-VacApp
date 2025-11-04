@@ -1,8 +1,6 @@
 namespace VacApp_Bovinova_Platform.VoiceCommand.Domain.Model.Queries;
 
-/// <summary>
-/// Query to get voice command statistics for a user
-/// </summary>
+/// <summary>Query to get voice command statistics for a user</summary>
 /// <param name="UserId">User ID</param>
 /// <param name="FromDate">Start date for statistics (optional)</param>
 /// <param name="ToDate">End date for statistics (optional)</param>

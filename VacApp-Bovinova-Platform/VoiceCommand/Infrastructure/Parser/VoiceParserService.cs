@@ -84,9 +84,7 @@ public partial class VoiceParserService : IVoiceParserService
         @"^(.+?)\s+capacidad\s+(\d+)$"
     ];
 
-    /// <summary>
-    /// Method to parse the voice command text and identify the command type and parameters
-    /// </summary>
+    /// <summary>Method to parse the voice command text and identify the command type and parameters</summary>
     /// <param name="text"></param>
     /// <returns></returns>
     public VoiceCommandResult ParseCommand(string text)

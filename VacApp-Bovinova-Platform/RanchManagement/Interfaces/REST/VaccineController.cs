@@ -12,9 +12,7 @@ using VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST.Transform;
 
 namespace VacApp_Bovinova_Platform.RanchManagement.Interfaces.REST;
 
-/// <summary>
-/// API controller for managing vaccines
-/// </summary>
+/// <summary>API controller for managing vaccines</summary>
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("/api/v1/vaccines")]
@@ -24,9 +22,7 @@ public class VaccineController(
    IVaccineCommandService commandService,
    IVaccineQueryService queryService) : ControllerBase
 {
-    /// <summary>
-    /// Posts a new vaccine to the system.
-    /// </summary>
+    /// <summary>Posts a new vaccine to the system.</summary>
     /// <param name="resource"></param>
     /// <returns></returns>
     [HttpPost]
@@ -60,9 +56,7 @@ public class VaccineController(
             VaccineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Gets all vaccines in the system.
-    /// </summary>
+    /// <summary>Gets all vaccines in the system.</summary>
     /// <returns></returns>
     [HttpGet]
     [SwaggerOperation(
@@ -85,9 +79,7 @@ public class VaccineController(
         return Ok(vaccineResources);
     }
 
-    /// <summary>
-    /// Gets a vaccine by its ID.
-    /// </summary>
+    /// <summary>Gets a vaccine by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
@@ -99,9 +91,7 @@ public class VaccineController(
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Gets all vaccines by bovine ID.
-    /// </summary>
+    /// <summary>Gets all vaccines by bovine ID.</summary>
     /// <param name="bovineId"></param>
     /// <returns></returns>
     [HttpGet("bovine/{bovineId}")]
@@ -117,9 +107,7 @@ public class VaccineController(
         return Ok(vaccineResources);
     }
 
-    /// <summary>
-    /// Updates a vaccine by its ID.
-    /// </summary>
+    /// <summary>Updates a vaccine by its ID.</summary>
     /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
@@ -137,9 +125,7 @@ public class VaccineController(
         return Ok(VaccineResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
-    /// <summary>
-    /// Deletes a vaccine by its ID.
-    /// </summary>
+    /// <summary>Deletes a vaccine by its ID.</summary>
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("{id}")]

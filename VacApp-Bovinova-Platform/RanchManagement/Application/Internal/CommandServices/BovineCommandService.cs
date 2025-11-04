@@ -12,9 +12,7 @@ public class BovineCommandService(IBovineRepository bovineRepository,
     IMediaStorageService mediaStorageService,
     IUnitOfWork unitOfWork) : IBovineCommandService
 {
-    /// <summary>
-    /// Handles the creation of a new bovine entity.
-    /// </summary>
+    /// <summary>Handles the creation of a new bovine entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -74,9 +72,7 @@ public class BovineCommandService(IBovineRepository bovineRepository,
         return bovine;
     }
 
-    /// <summary>
-    /// Handles the update of an existing bovine entity.
-    /// </summary>
+    /// <summary>Handles the update of an existing bovine entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
@@ -107,10 +103,7 @@ public class BovineCommandService(IBovineRepository bovineRepository,
         return bovine;
     }
 
-
-    /// <summary>
-    /// Handles the deletion of an existing bovine entity.
-    /// </summary>
+    /// <summary>Handles the deletion of an existing bovine entity.</summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>

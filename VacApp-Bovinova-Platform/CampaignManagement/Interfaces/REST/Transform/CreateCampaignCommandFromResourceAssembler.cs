@@ -18,5 +18,4 @@ public static class CreateCampaignCommandFromResourceAssembler
             resource.StableId,
             new CampaignUserId(userId)
             );
-
 }
