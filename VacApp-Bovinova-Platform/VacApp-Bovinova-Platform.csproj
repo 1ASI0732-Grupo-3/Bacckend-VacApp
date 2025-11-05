@@ -2,7 +2,8 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>  
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>VacApp_Bovinova_Platform</RootNamespace>
     </PropertyGroup>
@@ -12,7 +13,11 @@
         <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.68.0.1869" /> 
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.11" /> 
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" /> 
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" /> 
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" /> 
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
             <PrivateAssets>all</PrivateAssets>
@@ -23,6 +28,14 @@
 <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" /> 
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" /> 
         <PackageReference Include="Roslynator.Analyzers" Version="4.14.1">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference> 
+        <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference> 
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>

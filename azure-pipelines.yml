@@ -11,44 +11,71 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-  # Chekout
+  # checkout
   - task: Checkout@1
     displayName: "Checkout repository"
 
-  # .Net 8
+  # .net 8
   - task: UseDotNet@2
     displayName: "Setup .NET 8 SDK"
     inputs:
       packageType: 'sdk'
       version: '8.0.x'
 
-  # Dependencies
+  # dependencies
   - script: dotnet restore
     displayName: "Restore dependencies"
 
-  # Compilation
-  - script: dotnet build --no-restore --configuration $(buildConfiguration)
-    displayName: "Build solution"
+  # Analyzer for secutiry
+  - script: |
+      dotnet build --no-restore --configuration $(buildConfiguration) \
+      /p:TreatWarningsAsErrors=true \
+      /p:AnalysisMode=AllEnabledByDefault
+    displayName: "Build with analyzers (Quality & Security)"
 
-  # Tests
+  # run test
   - script: dotnet test --no-build --configuration $(buildConfiguration) --collect:"XPlat Code Coverage"
-    displayName: "Run unit tests"
+    displayName: "Run unit tests with coverage"
 
-  # .editorconfig verification
+  # verify .editorconfig
   - script: dotnet format --verify-no-changes
     displayName: "Verify code format"
 
-  # Roslynator analysis
+  # Roslynator 
   - script: |
       dotnet tool install --global roslynator.dotnet.cli --version 4.10.0
       export PATH="$PATH:/home/vsts/.dotnet/tools"
       roslynator analyze . --severity-level warning --output roslynator-report.txt
     displayName: "Run Roslynator analysis"
 
-  # Publish tests results 
+  # Vulnerable dependencies
+  - script: dotnet list package --vulnerable > vulnerable-packages.txt || true
+    displayName: "Scan for vulnerable NuGet dependencies"
+
+  # Secret Scan (GitLeaks)
+  - script: |
+      wget -q https://github.com/gitleaks/gitleaks/releases/download/v8.18.1/gitleaks_8.18.1_linux_x64.tar.gz -O - | tar -xz
+      ./gitleaks detect --source . --report-path gitleaks-report.json --no-banner || true
+    displayName: "Run secret scan (GitLeaks)"
+
+  # publish reports
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: 'roslynator-report.txt'
       ArtifactName: 'analysis-reports'
       publishLocation: 'Container'
-    displayName: "Publish analysis reports"
+    displayName: "Publish Roslynator analysis report"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'vulnerable-packages.txt'
+      ArtifactName: 'dependency-scan'
+      publishLocation: 'Container'
+    displayName: "Publish dependency vulnerability report"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'gitleaks-report.json'
+      ArtifactName: 'security-scan'
+      publishLocation: 'Container'
+    displayName: "Publish secret scan report"

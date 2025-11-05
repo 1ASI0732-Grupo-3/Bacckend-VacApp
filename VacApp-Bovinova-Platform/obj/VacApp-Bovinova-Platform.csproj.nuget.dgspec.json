@@ -80,6 +80,12 @@
               "target": "Package",
               "version": "[8.0.11, )"
             },
+            "Microsoft.CodeAnalysis.NetAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.CognitiveServices.Speech": {
               "target": "Package",
               "version": "[1.41.1, )"
@@ -131,6 +137,16 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[4.14.1, )"
+            },
+            "SecurityCodeScan.VS2019": {
+              "target": "Package",
+              "version": "[5.6.7, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
